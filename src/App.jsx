@@ -9,13 +9,12 @@ const ID_FIELD = 'id'
 // controls which rows are shown in each view
 const TYPE_FIELD = 'type'
 
+const TEMPLATES = ['Common', 'A', 'B', 'C']
+
 function App() {
   const dhRef = useRef(null)
-  const templates = ['Common', 'A', 'B', 'C']
   const [active, setActive] = useState(0)
   const [data, setData] = useState([])
-
-  const activeTemplate = templates[active]
 
   function handleStepChange(nextStep) {
     const current = dhRef.current.getDataObjects(false)
@@ -61,6 +60,8 @@ function App() {
     ])
   }
 
+  const activeTemplate = TEMPLATES[active]
+
   let filteredData;
   if (activeTemplate === 'Common') {
     filteredData = data;
@@ -72,7 +73,7 @@ function App() {
     <div className='p-4'>
       <div className="row">
         <div className="col-6">
-          <Stepper steps={templates} active={active} onChange={handleStepChange} />
+          <Stepper steps={TEMPLATES} active={active} onChange={handleStepChange} />
           <DataHarmonizer schema={schema} template={activeTemplate} data={filteredData} dhRef={dhRef} />
           <button className="btn btn-outline-secondary mt-2" onClick={handleAddTestData}>Test Data</button>
         </div>

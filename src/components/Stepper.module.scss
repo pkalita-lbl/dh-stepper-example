@@ -1,0 +1,50 @@
+.stepper {
+    display: flex;
+    justify-content: space-between;
+
+    .step {
+        background: none;
+        border: none;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        position: relative;
+        flex-grow: 1;
+
+        .number {
+            font-size: 1.3rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: var(--secondary);
+            color: white;
+            border-radius: 9999px;
+            width: 45px;
+            height: 45px;
+            margin-right: 0.5rem;
+            flex-shrink: 0;
+        }
+
+        &.active {
+            .number {
+                background-color: var(--primary);
+                color: white
+            }
+        }
+
+        &::after {
+            content: " ";
+            background-color: var(--secondary);
+            height: 2px;
+            width: 100%;
+            margin-left: 0.5rem;
+        }
+
+        &:last-child {
+            flex-grow: 0;
+            &::after {
+                content: none;
+            }
+        }
+    }
+}

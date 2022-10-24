@@ -1,17 +1,20 @@
 import React from "react";
 import PropTypes from 'prop-types'
 
+import style from './Stepper.module.scss'
+
 function Stepper({ active, onChange, steps }) {
   return (
-    <div className="btn-group mb-2" role="group">
+    <div className={`mb-2 ${style.stepper}`} role="group">
       { steps.map((step, idx) => (
         <button
           type="button" 
-          className={`btn btn-secondary ${idx === active ? 'active' : ''}`}
+          className={`${style.step} ${idx === active ? style.active : ''}`}
           onClick={() => onChange(idx)}
           key={step}
         >
-          {step}
+          <div className={style.number}>{idx + 1}</div>
+          <div>{step}</div>
         </button>
       ))}
     </div>
