@@ -93,7 +93,7 @@ function App() {
   return (
     <div className='p-4'>
       <div className="row">
-        <div className="col-6">
+        <div className="col-7">
           <Stepper steps={TEMPLATES} active={active} onChange={handleStepChange} />
           <button className='btn btn-warning mb-2' onClick={handleValidate}>Validate</button>
           <DataHarmonizer 
@@ -105,7 +105,7 @@ function App() {
           />
           <button className="btn btn-outline-secondary mt-2" onClick={handleAddTestData}>Test Data</button>
         </div>
-        <div className="col-6">
+        <div className="col-5 border-left">
           <div className='alert alert-warning small'>
             <h5 className='alert-heading'>Validation</h5>
             <pre>{JSON.stringify(invalidCells, null, 2)}</pre>
