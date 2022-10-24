@@ -4,7 +4,7 @@ import { DataHarmonizer as DH } from 'data-harmonizer'
 
 import style from './DataHarmonizer.module.scss'
 
-function DataHarmonizer({ schema, template, data, dhRef }) {
+function DataHarmonizer({ schema, template, data, dhRef, invalidCells }) {
   const gridRef = useRef(null)
 
   useEffect(() => {
@@ -21,6 +21,14 @@ function DataHarmonizer({ schema, template, data, dhRef }) {
     dhRef.current.loadDataObjects(data)
   }, [data, dhRef])
 
+  useEffect(() => {
+    if (!dhRef.current || !invalidCells) {
+      return
+    }
+    dhRef.current.invalid_cells = invalidCells
+    dhRef.current.hot.render()
+  }, [invalidCells, dhRef])
+
   return <div ref={gridRef} className={style.dhRoot}></div>
 }
 
@@ -32,6 +40,7 @@ DataHarmonizer.propTypes = {
   onChange: PropTypes.func,
   schema: PropTypes.object.isRequired,
   template: PropTypes.string.isRequired,
+  invalidCells: PropTypes.object,
 }
 
 export default DataHarmonizer

@@ -57,30 +57,39 @@ slots:
   A1:
     slot_group: A
     rank: 5
+    required: true
   A2:
     slot_group: A
     rank: 6
+    required: true
   A3:
     slot_group: A
     rank: 7
+    required: true
   B1:
     slot_group: B
     rank: 5
+    required: true
   B2:
     slot_group: B
     rank: 6
+    required: true
   B3:
     slot_group: B
     rank: 7
+    required: true
   C1:
     slot_group: C
     rank: 5
+    required: true
   C2:
     slot_group: C
     rank: 6
+    required: true
   C3:
     slot_group: C
     rank: 7
+    required: true
 
   # this allows DH to order slot groups
   Basic info:

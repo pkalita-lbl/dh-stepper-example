@@ -69,55 +69,64 @@
       "name": "A1",
       "from_schema": "http://example.org/dh-stepper-example",
       "rank": 5,
-      "slot_group": "A"
+      "slot_group": "A",
+      "required": true
     },
     "A2": {
       "name": "A2",
       "from_schema": "http://example.org/dh-stepper-example",
       "rank": 6,
-      "slot_group": "A"
+      "slot_group": "A",
+      "required": true
     },
     "A3": {
       "name": "A3",
       "from_schema": "http://example.org/dh-stepper-example",
       "rank": 7,
-      "slot_group": "A"
+      "slot_group": "A",
+      "required": true
     },
     "B1": {
       "name": "B1",
       "from_schema": "http://example.org/dh-stepper-example",
       "rank": 5,
-      "slot_group": "B"
+      "slot_group": "B",
+      "required": true
     },
     "B2": {
       "name": "B2",
       "from_schema": "http://example.org/dh-stepper-example",
       "rank": 6,
-      "slot_group": "B"
+      "slot_group": "B",
+      "required": true
     },
     "B3": {
       "name": "B3",
       "from_schema": "http://example.org/dh-stepper-example",
       "rank": 7,
-      "slot_group": "B"
+      "slot_group": "B",
+      "required": true
     },
     "C1": {
       "name": "C1",
       "from_schema": "http://example.org/dh-stepper-example",
       "rank": 5,
-      "slot_group": "C"
+      "slot_group": "C",
+      "required": true
     },
     "C2": {
       "name": "C2",
       "from_schema": "http://example.org/dh-stepper-example",
       "rank": 6,
-      "slot_group": "C"
+      "slot_group": "C",
+      "required": true
     },
     "C3": {
       "name": "C3",
       "from_schema": "http://example.org/dh-stepper-example",
       "rank": 7,
-      "slot_group": "C"
+      "slot_group": "C",
+      "required": true
     },
     "Basic info": {
       "name": "Basic info",
@@ -277,7 +286,8 @@
             "A"
           ],
           "slot_group": "A",
-          "range": "string"
+          "range": "string",
+          "required": true
         },
         "A2": {
           "name": "A2",
@@ -289,7 +299,8 @@
             "A"
           ],
           "slot_group": "A",
-          "range": "string"
+          "range": "string",
+          "required": true
         },
         "A3": {
           "name": "A3",
@@ -301,7 +312,8 @@
             "A"
           ],
           "slot_group": "A",
-          "range": "string"
+          "range": "string",
+          "required": true
         },
         "id": {
           "name": "id",
@@ -370,7 +382,8 @@
             "B"
           ],
           "slot_group": "B",
-          "range": "string"
+          "range": "string",
+          "required": true
         },
         "B2": {
           "name": "B2",
@@ -382,7 +395,8 @@
             "B"
           ],
           "slot_group": "B",
-          "range": "string"
+          "range": "string",
+          "required": true
         },
         "B3": {
           "name": "B3",
@@ -394,7 +408,8 @@
             "B"
           ],
           "slot_group": "B",
-          "range": "string"
+          "range": "string",
+          "required": true
         },
         "id": {
           "name": "id",
@@ -466,7 +481,8 @@
             "C"
           ],
           "slot_group": "C",
-          "range": "string"
+          "range": "string",
+          "required": true
         },
         "C2": {
           "name": "C2",
@@ -478,7 +494,8 @@
             "C"
           ],
           "slot_group": "C",
-          "range": "string"
+          "range": "string",
+          "required": true
         },
         "C3": {
           "name": "C3",
@@ -490,7 +507,8 @@
             "C"
           ],
           "slot_group": "C",
-          "range": "string"
+          "range": "string",
+          "required": true
         },
         "id": {
           "name": "id",
