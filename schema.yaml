@@ -1,0 +1,85 @@
+id: http://example.org/dh-stepper-example
+name: dh-stepper-example
+prefixes:
+  linkml: https://w3id.org/linkml/
+imports:
+  - linkml:types
+default_range: string
+
+classes:
+  View:
+    abstract: true
+    slots:
+      - identifier
+      - name
+  ViewA:
+    is_a: View
+    slots:
+      - A1
+      - A2
+      - A3
+  ViewB:
+    is_a: View
+    slots:
+      - B1
+      - B2
+      - B3
+  ViewC:
+    is_a: View
+    slots:
+      - C1
+      - C2
+      - C3
+      
+slots:
+  identifier:
+    identifier: true
+    slot_group: Basic info
+    rank: 1
+  name:
+    required: true
+    slot_group: Basic info
+    rank: 2
+  A1:
+    slot_group: A
+    rank: 3
+  A2:
+    slot_group: A
+    rank: 4
+  A3:
+    slot_group: A
+    rank: 5
+  B1:
+    slot_group: B
+    rank: 3
+  B2:
+    slot_group: B
+    rank: 4
+  B3:
+    slot_group: B
+    rank: 5
+  C1:
+    slot_group: C
+    rank: 3
+  C2:
+    slot_group: C
+    rank: 4
+  C3:
+    slot_group: C
+    rank: 5
+
+  # this allows DH to order slot groups
+  Basic info:
+    rank: 1
+  A:
+    rank: 2
+  B:
+    rank: 2
+  C:
+    rank: 2
+
+# TODO: open DH issue that these shouldn't be required
+enums:
+  phony:
+types:
+  phony:

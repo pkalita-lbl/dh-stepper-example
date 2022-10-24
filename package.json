@@ -10,6 +10,11 @@
     "lint": "eslint src --ext .js,.jsx"
   },
   "dependencies": {
+    "bootstrap": "4.x",
+    "data-harmonizer": "^1.4.0",
+    "jquery": "3.x",
+    "popper.js": "1.x",
+    "prop-types": "^15.8.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   },
@@ -20,6 +25,7 @@
     "eslint": "^8.25.0",
     "eslint-plugin-react": "^7.31.10",
     "eslint-plugin-react-hooks": "^4.6.0",
+    "sass": "^1.55.0",
     "vite": "^3.1.0"
   }
 }

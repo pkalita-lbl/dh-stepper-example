@@ -1,0 +1,391 @@
+{
+  "name": "dh-stepper-example",
+  "id": "http://example.org/dh-stepper-example",
+  "imports": [
+    "linkml:types"
+  ],
+  "prefixes": {
+    "linkml": {
+      "prefix_prefix": "linkml",
+      "prefix_reference": "https://w3id.org/linkml/"
+    }
+  },
+  "default_prefix": "http://example.org/dh-stepper-example/",
+  "default_range": "string",
+  "types": {
+    "phony": {
+      "name": "phony",
+      "from_schema": "http://example.org/dh-stepper-example"
+    }
+  },
+  "enums": {
+    "phony": {
+      "name": "phony"
+    }
+  },
+  "slots": {
+    "identifier": {
+      "name": "identifier",
+      "from_schema": "http://example.org/dh-stepper-example",
+      "rank": 1,
+      "identifier": true,
+      "slot_group": "Basic info"
+    },
+    "name": {
+      "name": "name",
+      "from_schema": "http://example.org/dh-stepper-example",
+      "rank": 2,
+      "slot_group": "Basic info",
+      "required": true
+    },
+    "A1": {
+      "name": "A1",
+      "from_schema": "http://example.org/dh-stepper-example",
+      "rank": 3,
+      "slot_group": "A"
+    },
+    "A2": {
+      "name": "A2",
+      "from_schema": "http://example.org/dh-stepper-example",
+      "rank": 4,
+      "slot_group": "A"
+    },
+    "A3": {
+      "name": "A3",
+      "from_schema": "http://example.org/dh-stepper-example",
+      "rank": 5,
+      "slot_group": "A"
+    },
+    "B1": {
+      "name": "B1",
+      "from_schema": "http://example.org/dh-stepper-example",
+      "rank": 3,
+      "slot_group": "B"
+    },
+    "B2": {
+      "name": "B2",
+      "from_schema": "http://example.org/dh-stepper-example",
+      "rank": 4,
+      "slot_group": "B"
+    },
+    "B3": {
+      "name": "B3",
+      "from_schema": "http://example.org/dh-stepper-example",
+      "rank": 5,
+      "slot_group": "B"
+    },
+    "C1": {
+      "name": "C1",
+      "from_schema": "http://example.org/dh-stepper-example",
+      "rank": 3,
+      "slot_group": "C"
+    },
+    "C2": {
+      "name": "C2",
+      "from_schema": "http://example.org/dh-stepper-example",
+      "rank": 4,
+      "slot_group": "C"
+    },
+    "C3": {
+      "name": "C3",
+      "from_schema": "http://example.org/dh-stepper-example",
+      "rank": 5,
+      "slot_group": "C"
+    },
+    "Basic info": {
+      "name": "Basic info",
+      "from_schema": "http://example.org/dh-stepper-example",
+      "rank": 1
+    },
+    "A": {
+      "name": "A",
+      "from_schema": "http://example.org/dh-stepper-example",
+      "rank": 2
+    },
+    "B": {
+      "name": "B",
+      "from_schema": "http://example.org/dh-stepper-example",
+      "rank": 2
+    },
+    "C": {
+      "name": "C",
+      "from_schema": "http://example.org/dh-stepper-example",
+      "rank": 2
+    }
+  },
+  "classes": {
+    "View": {
+      "name": "View",
+      "from_schema": "http://example.org/dh-stepper-example",
+      "abstract": true,
+      "slots": [
+        "identifier",
+        "name"
+      ],
+      "attributes": {
+        "identifier": {
+          "name": "identifier",
+          "from_schema": "http://example.org/dh-stepper-example",
+          "rank": 1,
+          "identifier": true,
+          "alias": "identifier",
+          "owner": "View",
+          "domain_of": [
+            "View"
+          ],
+          "slot_group": "Basic info",
+          "range": "string"
+        },
+        "name": {
+          "name": "name",
+          "from_schema": "http://example.org/dh-stepper-example",
+          "rank": 2,
+          "alias": "name",
+          "owner": "View",
+          "domain_of": [
+            "View"
+          ],
+          "slot_group": "Basic info",
+          "range": "string",
+          "required": true
+        }
+      }
+    },
+    "ViewA": {
+      "name": "ViewA",
+      "from_schema": "http://example.org/dh-stepper-example",
+      "is_a": "View",
+      "slots": [
+        "A1",
+        "A2",
+        "A3"
+      ],
+      "attributes": {
+        "A1": {
+          "name": "A1",
+          "from_schema": "http://example.org/dh-stepper-example",
+          "rank": 3,
+          "alias": "A1",
+          "owner": "ViewA",
+          "domain_of": [
+            "ViewA"
+          ],
+          "slot_group": "A",
+          "range": "string"
+        },
+        "A2": {
+          "name": "A2",
+          "from_schema": "http://example.org/dh-stepper-example",
+          "rank": 4,
+          "alias": "A2",
+          "owner": "ViewA",
+          "domain_of": [
+            "ViewA"
+          ],
+          "slot_group": "A",
+          "range": "string"
+        },
+        "A3": {
+          "name": "A3",
+          "from_schema": "http://example.org/dh-stepper-example",
+          "rank": 5,
+          "alias": "A3",
+          "owner": "ViewA",
+          "domain_of": [
+            "ViewA"
+          ],
+          "slot_group": "A",
+          "range": "string"
+        },
+        "identifier": {
+          "name": "identifier",
+          "from_schema": "http://example.org/dh-stepper-example",
+          "rank": 1,
+          "identifier": true,
+          "alias": "identifier",
+          "owner": "ViewA",
+          "domain_of": [
+            "View",
+            "View"
+          ],
+          "slot_group": "Basic info",
+          "range": "string"
+        },
+        "name": {
+          "name": "name",
+          "from_schema": "http://example.org/dh-stepper-example",
+          "rank": 2,
+          "alias": "name",
+          "owner": "ViewA",
+          "domain_of": [
+            "View",
+            "View"
+          ],
+          "slot_group": "Basic info",
+          "range": "string",
+          "required": true
+        }
+      }
+    },
+    "ViewB": {
+      "name": "ViewB",
+      "from_schema": "http://example.org/dh-stepper-example",
+      "is_a": "View",
+      "slots": [
+        "B1",
+        "B2",
+        "B3"
+      ],
+      "attributes": {
+        "B1": {
+          "name": "B1",
+          "from_schema": "http://example.org/dh-stepper-example",
+          "rank": 3,
+          "alias": "B1",
+          "owner": "ViewB",
+          "domain_of": [
+            "ViewB"
+          ],
+          "slot_group": "B",
+          "range": "string"
+        },
+        "B2": {
+          "name": "B2",
+          "from_schema": "http://example.org/dh-stepper-example",
+          "rank": 4,
+          "alias": "B2",
+          "owner": "ViewB",
+          "domain_of": [
+            "ViewB"
+          ],
+          "slot_group": "B",
+          "range": "string"
+        },
+        "B3": {
+          "name": "B3",
+          "from_schema": "http://example.org/dh-stepper-example",
+          "rank": 5,
+          "alias": "B3",
+          "owner": "ViewB",
+          "domain_of": [
+            "ViewB"
+          ],
+          "slot_group": "B",
+          "range": "string"
+        },
+        "identifier": {
+          "name": "identifier",
+          "from_schema": "http://example.org/dh-stepper-example",
+          "rank": 1,
+          "identifier": true,
+          "alias": "identifier",
+          "owner": "ViewB",
+          "domain_of": [
+            "View",
+            "View",
+            "ViewA"
+          ],
+          "slot_group": "Basic info",
+          "range": "string"
+        },
+        "name": {
+          "name": "name",
+          "from_schema": "http://example.org/dh-stepper-example",
+          "rank": 2,
+          "alias": "name",
+          "owner": "ViewB",
+          "domain_of": [
+            "View",
+            "View",
+            "ViewA"
+          ],
+          "slot_group": "Basic info",
+          "range": "string",
+          "required": true
+        }
+      }
+    },
+    "ViewC": {
+      "name": "ViewC",
+      "from_schema": "http://example.org/dh-stepper-example",
+      "is_a": "View",
+      "slots": [
+        "C1",
+        "C2",
+        "C3"
+      ],
+      "attributes": {
+        "C1": {
+          "name": "C1",
+          "from_schema": "http://example.org/dh-stepper-example",
+          "rank": 3,
+          "alias": "C1",
+          "owner": "ViewC",
+          "domain_of": [
+            "ViewC"
+          ],
+          "slot_group": "C",
+          "range": "string"
+        },
+        "C2": {
+          "name": "C2",
+          "from_schema": "http://example.org/dh-stepper-example",
+          "rank": 4,
+          "alias": "C2",
+          "owner": "ViewC",
+          "domain_of": [
+            "ViewC"
+          ],
+          "slot_group": "C",
+          "range": "string"
+        },
+        "C3": {
+          "name": "C3",
+          "from_schema": "http://example.org/dh-stepper-example",
+          "rank": 5,
+          "alias": "C3",
+          "owner": "ViewC",
+          "domain_of": [
+            "ViewC"
+          ],
+          "slot_group": "C",
+          "range": "string"
+        },
+        "identifier": {
+          "name": "identifier",
+          "from_schema": "http://example.org/dh-stepper-example",
+          "rank": 1,
+          "identifier": true,
+          "alias": "identifier",
+          "owner": "ViewC",
+          "domain_of": [
+            "View",
+            "View",
+            "ViewA",
+            "ViewB"
+          ],
+          "slot_group": "Basic info",
+          "range": "string"
+        },
+        "name": {
+          "name": "name",
+          "from_schema": "http://example.org/dh-stepper-example",
+          "rank": 2,
+          "alias": "name",
+          "owner": "ViewC",
+          "domain_of": [
+            "View",
+            "View",
+            "ViewA",
+            "ViewB"
+          ],
+          "slot_group": "Basic info",
+          "range": "string",
+          "required": true
+        }
+      }
+    }
+  },
+  "source_file": "schema.yaml",
+  "@type": "SchemaDefinition"
+}

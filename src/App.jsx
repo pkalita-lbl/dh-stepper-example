@@ -1,10 +1,13 @@
 import React from 'react'
+import DataHarmonizer from './components/DataHarmonizer'
+
+import schema from './schema.json'
 
 function App() {
   return (
-    <div>
-      hello
-    </div>
+    <>
+      <DataHarmonizer schema={schema} template='ViewA' />
+    </>
   )
 }
 
