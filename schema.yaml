@@ -10,21 +10,26 @@ classes:
   View:
     abstract: true
     slots:
-      - identifier
+      - id
       - name
-  ViewA:
+      - type
+  Common:
+    is_a: View
+    slots: 
+      - common_field
+  A:
     is_a: View
     slots:
       - A1
       - A2
       - A3
-  ViewB:
+  B:
     is_a: View
     slots:
       - B1
       - B2
       - B3
-  ViewC:
+  C:
     is_a: View
     slots:
       - C1
@@ -32,7 +37,7 @@ classes:
       - C3
       
 slots:
-  identifier:
+  id:
     identifier: true
     slot_group: Basic info
     rank: 1
@@ -40,33 +45,42 @@ slots:
     required: true
     slot_group: Basic info
     rank: 2
+  type:
+    required: true
+    multivalued: true
+    range: TypeOptions
+    slot_group: Basic info
+    rank: 3
+  common_field:
+    slot_group: Basic info
+    rank: 4
   A1:
     slot_group: A
-    rank: 3
+    rank: 5
   A2:
     slot_group: A
-    rank: 4
+    rank: 6
   A3:
     slot_group: A
-    rank: 5
+    rank: 7
   B1:
     slot_group: B
-    rank: 3
+    rank: 5
   B2:
     slot_group: B
-    rank: 4
+    rank: 6
   B3:
     slot_group: B
-    rank: 5
+    rank: 7
   C1:
     slot_group: C
-    rank: 3
+    rank: 5
   C2:
     slot_group: C
-    rank: 4
+    rank: 6
   C3:
     slot_group: C
-    rank: 5
+    rank: 7
 
   # this allows DH to order slot groups
   Basic info:
@@ -78,8 +92,13 @@ slots:
   C:
     rank: 2
 
-# TODO: open DH issue that these shouldn't be required
 enums:
-  phony:
+  TypeOptions:
+    permissible_values:
+      - A:
+      - B:
+      - C:
+
+# TODO: open DH issue that these shouldn't be required
 types:
   phony:
