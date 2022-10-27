@@ -89,6 +89,9 @@ function App() {
       return data.filter(row => row[TYPE_FIELD] && row[TYPE_FIELD].includes(activeTemplate))
     }
   }, [data, activeTemplate])
+
+
+  const idCol = dhRef.current?.getFieldYCoordinates()[ID_FIELD]
   
   return (
     <div className='p-4'>
@@ -101,6 +104,7 @@ function App() {
             template={activeTemplate} 
             data={filteredData} 
             invalidCells={invalidCells[activeTemplate]}
+            readOnlyCols={activeTemplate === 'Common' ? [] : [idCol]}
             dhRef={dhRef} 
           />
           <button className="btn btn-outline-secondary mt-2" onClick={handleAddTestData}>Test Data</button>

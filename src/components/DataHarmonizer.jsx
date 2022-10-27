@@ -4,7 +4,7 @@ import { DataHarmonizer as DH } from 'data-harmonizer'
 
 import style from './DataHarmonizer.module.scss'
 
-function DataHarmonizer({ schema, template, data, dhRef, invalidCells }) {
+function DataHarmonizer({ schema, template, data, dhRef, invalidCells, readOnlyCols = [] }) {
   const gridRef = useRef(null)
 
   useEffect(() => {
@@ -29,6 +29,17 @@ function DataHarmonizer({ schema, template, data, dhRef, invalidCells }) {
     dhRef.current.hot.render()
   }, [invalidCells, dhRef])
 
+  useEffect(() => {
+    const hot = dhRef.current.hot
+    const rowCount = hot.countRows()
+    for (let col of readOnlyCols) {
+      for (let row = 0; row < rowCount; row += 1) {
+        hot.setCellMeta(row, col, 'readOnly', true)
+      }
+    }
+    hot.render()
+  }, [readOnlyCols, dhRef])
+
   return <div ref={gridRef} className={style.dhRoot}></div>
 }
 
@@ -41,6 +52,7 @@ DataHarmonizer.propTypes = {
   schema: PropTypes.object.isRequired,
   template: PropTypes.string.isRequired,
   invalidCells: PropTypes.object,
+  readOnlyCols: PropTypes.arrayOf(PropTypes.number)
 }
 
 export default DataHarmonizer
