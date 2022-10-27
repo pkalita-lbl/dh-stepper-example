@@ -9,7 +9,7 @@ const ID_FIELD = 'id'
 // controls which rows are shown in each view
 const TYPE_FIELD = 'type'
 
-const TEMPLATES = ['Common', 'A', 'B', 'C']
+const TEMPLATES = ['Soil', 'MetaT', 'MetaG', 'MetaP']
 
 function App() {
   const dhRef = useRef(null)
@@ -51,20 +51,20 @@ function App() {
       {
         id: 1,
         name: 'x',
-        type: ['A'],
-        common_field: 'asdf'
+        type: ['MetaT'],
+        depth: 'asdf'
       },
       {
         id: 2,
         name: 'y',
-        type: ['B'],
-        common_field: 'qwert'
+        type: ['MetaG'],
+        depth: 'qwert'
       },
       {
         id: 3,
         name: 'z',
-        type: ['A', 'C'],
-        common_field: 'xcvbn'
+        type: ['MetaT', 'MetaP'],
+        depth: 'xcvbn'
       },
     ])
   }
@@ -83,7 +83,7 @@ function App() {
 
 
   const filteredData = useMemo(() => {
-    if (activeTemplate === 'Common') {
+    if (activeTemplate === TEMPLATES[0]) {
       return data
     } else {
       return data.filter(row => row[TYPE_FIELD] && row[TYPE_FIELD].includes(activeTemplate))
@@ -104,7 +104,7 @@ function App() {
             template={activeTemplate} 
             data={filteredData} 
             invalidCells={invalidCells[activeTemplate]}
-            readOnlyCols={activeTemplate === 'Common' ? [] : [idCol]}
+            readOnlyCols={activeTemplate === TEMPLATES[0] ? [] : [idCol]}
             dhRef={dhRef} 
           />
           <button className="btn btn-outline-secondary mt-2" onClick={handleAddTestData}>Test Data</button>

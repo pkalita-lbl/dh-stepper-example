@@ -13,100 +13,100 @@ classes:
       - id
       - name
       - type
-  Common:
+  Soil:
     is_a: View
     slots: 
-      - common_field
-  A:
+      - depth
+  MetaT:
     is_a: View
     slots:
-      - A1
-      - A2
-      - A3
-  B:
+      - T1
+      - T2
+      - T3
+  MetaG:
     is_a: View
     slots:
-      - B1
-      - B2
-      - B3
-  C:
+      - G1
+      - G2
+      - G3
+  MetaP:
     is_a: View
     slots:
-      - C1
-      - C2
-      - C3
+      - P1
+      - P2
+      - P3
       
 slots:
   id:
     identifier: true
-    slot_group: Basic info
+    slot_group: Sample info
     rank: 1
   name:
     required: true
-    slot_group: Basic info
+    slot_group: Sample info
     rank: 2
   type:
     required: true
     multivalued: true
     range: TypeOptions
-    slot_group: Basic info
+    slot_group: Sample info
     rank: 3
-  common_field:
-    slot_group: Basic info
+  depth:
+    slot_group: Sample info
     rank: 4
-  A1:
-    slot_group: A
+  T1:
+    slot_group: MetaT
     rank: 5
     required: true
-  A2:
-    slot_group: A
+  T2:
+    slot_group: MetaT
     rank: 6
     required: true
-  A3:
-    slot_group: A
+  T3:
+    slot_group: MetaT
     rank: 7
     required: true
-  B1:
-    slot_group: B
+  G1:
+    slot_group: MetaG
     rank: 5
     required: true
-  B2:
-    slot_group: B
+  G2:
+    slot_group: MetaG
     rank: 6
     required: true
-  B3:
-    slot_group: B
+  G3:
+    slot_group: MetaG
     rank: 7
     required: true
-  C1:
-    slot_group: C
+  P1:
+    slot_group: MetaP
     rank: 5
     required: true
-  C2:
-    slot_group: C
+  P2:
+    slot_group: MetaP
     rank: 6
     required: true
-  C3:
-    slot_group: C
+  P3:
+    slot_group: MetaP
     rank: 7
     required: true
 
   # this allows DH to order slot groups
-  Basic info:
+  Sample info:
     rank: 1
-  A:
+  MetaT:
     rank: 2
-  B:
+  MetaG:
     rank: 2
-  C:
+  MetaP:
     rank: 2
 
 enums:
   TypeOptions:
     permissible_values:
-      - A:
-      - B:
-      - C:
+      - MetaT:
+      - MetaG:
+      - MetaP:
 
 # TODO: open DH issue that these shouldn't be required
 types:

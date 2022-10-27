@@ -23,14 +23,14 @@
       "name": "TypeOptions",
       "from_schema": "http://example.org/dh-stepper-example",
       "permissible_values": {
-        "A": {
-          "text": "A"
+        "MetaT": {
+          "text": "MetaT"
         },
-        "B": {
-          "text": "B"
+        "MetaG": {
+          "text": "MetaG"
         },
-        "C": {
-          "text": "C"
+        "MetaP": {
+          "text": "MetaP"
         }
       }
     }
@@ -41,13 +41,13 @@
       "from_schema": "http://example.org/dh-stepper-example",
       "rank": 1,
       "identifier": true,
-      "slot_group": "Basic info"
+      "slot_group": "Sample info"
     },
     "name": {
       "name": "name",
       "from_schema": "http://example.org/dh-stepper-example",
       "rank": 2,
-      "slot_group": "Basic info",
+      "slot_group": "Sample info",
       "required": true
     },
     "type": {
@@ -55,96 +55,96 @@
       "from_schema": "http://example.org/dh-stepper-example",
       "rank": 3,
       "multivalued": true,
-      "slot_group": "Basic info",
+      "slot_group": "Sample info",
       "range": "TypeOptions",
       "required": true
     },
-    "common_field": {
-      "name": "common_field",
+    "depth": {
+      "name": "depth",
       "from_schema": "http://example.org/dh-stepper-example",
       "rank": 4,
-      "slot_group": "Basic info"
+      "slot_group": "Sample info"
     },
-    "A1": {
-      "name": "A1",
+    "T1": {
+      "name": "T1",
       "from_schema": "http://example.org/dh-stepper-example",
       "rank": 5,
-      "slot_group": "A",
+      "slot_group": "MetaT",
       "required": true
     },
-    "A2": {
-      "name": "A2",
+    "T2": {
+      "name": "T2",
       "from_schema": "http://example.org/dh-stepper-example",
       "rank": 6,
-      "slot_group": "A",
+      "slot_group": "MetaT",
       "required": true
     },
-    "A3": {
-      "name": "A3",
+    "T3": {
+      "name": "T3",
       "from_schema": "http://example.org/dh-stepper-example",
       "rank": 7,
-      "slot_group": "A",
+      "slot_group": "MetaT",
       "required": true
     },
-    "B1": {
-      "name": "B1",
+    "G1": {
+      "name": "G1",
       "from_schema": "http://example.org/dh-stepper-example",
       "rank": 5,
-      "slot_group": "B",
+      "slot_group": "MetaG",
       "required": true
     },
-    "B2": {
-      "name": "B2",
+    "G2": {
+      "name": "G2",
       "from_schema": "http://example.org/dh-stepper-example",
       "rank": 6,
-      "slot_group": "B",
+      "slot_group": "MetaG",
       "required": true
     },
-    "B3": {
-      "name": "B3",
+    "G3": {
+      "name": "G3",
       "from_schema": "http://example.org/dh-stepper-example",
       "rank": 7,
-      "slot_group": "B",
+      "slot_group": "MetaG",
       "required": true
     },
-    "C1": {
-      "name": "C1",
+    "P1": {
+      "name": "P1",
       "from_schema": "http://example.org/dh-stepper-example",
       "rank": 5,
-      "slot_group": "C",
+      "slot_group": "MetaP",
       "required": true
     },
-    "C2": {
-      "name": "C2",
+    "P2": {
+      "name": "P2",
       "from_schema": "http://example.org/dh-stepper-example",
       "rank": 6,
-      "slot_group": "C",
+      "slot_group": "MetaP",
       "required": true
     },
-    "C3": {
-      "name": "C3",
+    "P3": {
+      "name": "P3",
       "from_schema": "http://example.org/dh-stepper-example",
       "rank": 7,
-      "slot_group": "C",
+      "slot_group": "MetaP",
       "required": true
     },
-    "Basic info": {
-      "name": "Basic info",
+    "Sample info": {
+      "name": "Sample info",
       "from_schema": "http://example.org/dh-stepper-example",
       "rank": 1
     },
-    "A": {
-      "name": "A",
+    "MetaT": {
+      "name": "MetaT",
       "from_schema": "http://example.org/dh-stepper-example",
       "rank": 2
     },
-    "B": {
-      "name": "B",
+    "MetaG": {
+      "name": "MetaG",
       "from_schema": "http://example.org/dh-stepper-example",
       "rank": 2
     },
-    "C": {
-      "name": "C",
+    "MetaP": {
+      "name": "MetaP",
       "from_schema": "http://example.org/dh-stepper-example",
       "rank": 2
     }
@@ -170,7 +170,7 @@
           "domain_of": [
             "View"
           ],
-          "slot_group": "Basic info",
+          "slot_group": "Sample info",
           "range": "string"
         },
         "name": {
@@ -182,7 +182,7 @@
           "domain_of": [
             "View"
           ],
-          "slot_group": "Basic info",
+          "slot_group": "Sample info",
           "range": "string",
           "required": true
         },
@@ -196,30 +196,30 @@
           "domain_of": [
             "View"
           ],
-          "slot_group": "Basic info",
+          "slot_group": "Sample info",
           "range": "TypeOptions",
           "required": true
         }
       }
     },
-    "Common": {
-      "name": "Common",
+    "Soil": {
+      "name": "Soil",
       "from_schema": "http://example.org/dh-stepper-example",
       "is_a": "View",
       "slots": [
-        "common_field"
+        "depth"
       ],
       "attributes": {
-        "common_field": {
-          "name": "common_field",
+        "depth": {
+          "name": "depth",
           "from_schema": "http://example.org/dh-stepper-example",
           "rank": 4,
-          "alias": "common_field",
-          "owner": "Common",
+          "alias": "depth",
+          "owner": "Soil",
           "domain_of": [
-            "Common"
+            "Soil"
           ],
-          "slot_group": "Basic info",
+          "slot_group": "Sample info",
           "range": "string"
         },
         "id": {
@@ -228,12 +228,12 @@
           "rank": 1,
           "identifier": true,
           "alias": "id",
-          "owner": "Common",
+          "owner": "Soil",
           "domain_of": [
             "View",
             "View"
           ],
-          "slot_group": "Basic info",
+          "slot_group": "Sample info",
           "range": "string"
         },
         "name": {
@@ -241,12 +241,12 @@
           "from_schema": "http://example.org/dh-stepper-example",
           "rank": 2,
           "alias": "name",
-          "owner": "Common",
+          "owner": "Soil",
           "domain_of": [
             "View",
             "View"
           ],
-          "slot_group": "Basic info",
+          "slot_group": "Sample info",
           "range": "string",
           "required": true
         },
@@ -256,62 +256,62 @@
           "rank": 3,
           "multivalued": true,
           "alias": "type",
-          "owner": "Common",
+          "owner": "Soil",
           "domain_of": [
             "View",
             "View"
           ],
-          "slot_group": "Basic info",
+          "slot_group": "Sample info",
           "range": "TypeOptions",
           "required": true
         }
       }
     },
-    "A": {
-      "name": "A",
+    "MetaT": {
+      "name": "MetaT",
       "is_a": "View",
       "slots": [
-        "A1",
-        "A2",
-        "A3"
+        "T1",
+        "T2",
+        "T3"
       ],
       "attributes": {
-        "A1": {
-          "name": "A1",
+        "T1": {
+          "name": "T1",
           "from_schema": "http://example.org/dh-stepper-example",
           "rank": 5,
-          "alias": "A1",
-          "owner": "A",
+          "alias": "T1",
+          "owner": "MetaT",
           "domain_of": [
-            "A"
+            "MetaT"
           ],
-          "slot_group": "A",
+          "slot_group": "MetaT",
           "range": "string",
           "required": true
         },
-        "A2": {
-          "name": "A2",
+        "T2": {
+          "name": "T2",
           "from_schema": "http://example.org/dh-stepper-example",
           "rank": 6,
-          "alias": "A2",
-          "owner": "A",
+          "alias": "T2",
+          "owner": "MetaT",
           "domain_of": [
-            "A"
+            "MetaT"
           ],
-          "slot_group": "A",
+          "slot_group": "MetaT",
           "range": "string",
           "required": true
         },
-        "A3": {
-          "name": "A3",
+        "T3": {
+          "name": "T3",
           "from_schema": "http://example.org/dh-stepper-example",
           "rank": 7,
-          "alias": "A3",
-          "owner": "A",
+          "alias": "T3",
+          "owner": "MetaT",
           "domain_of": [
-            "A"
+            "MetaT"
           ],
-          "slot_group": "A",
+          "slot_group": "MetaT",
           "range": "string",
           "required": true
         },
@@ -321,13 +321,13 @@
           "rank": 1,
           "identifier": true,
           "alias": "id",
-          "owner": "A",
+          "owner": "MetaT",
           "domain_of": [
             "View",
             "View",
-            "Common"
+            "Soil"
           ],
-          "slot_group": "Basic info",
+          "slot_group": "Sample info",
           "range": "string"
         },
         "name": {
@@ -335,13 +335,13 @@
           "from_schema": "http://example.org/dh-stepper-example",
           "rank": 2,
           "alias": "name",
-          "owner": "A",
+          "owner": "MetaT",
           "domain_of": [
             "View",
             "View",
-            "Common"
+            "Soil"
           ],
-          "slot_group": "Basic info",
+          "slot_group": "Sample info",
           "range": "string",
           "required": true
         },
@@ -351,63 +351,63 @@
           "rank": 3,
           "multivalued": true,
           "alias": "type",
-          "owner": "A",
+          "owner": "MetaT",
           "domain_of": [
             "View",
             "View",
-            "Common"
+            "Soil"
           ],
-          "slot_group": "Basic info",
+          "slot_group": "Sample info",
           "range": "TypeOptions",
           "required": true
         }
       }
     },
-    "B": {
-      "name": "B",
+    "MetaG": {
+      "name": "MetaG",
       "is_a": "View",
       "slots": [
-        "B1",
-        "B2",
-        "B3"
+        "G1",
+        "G2",
+        "G3"
       ],
       "attributes": {
-        "B1": {
-          "name": "B1",
+        "G1": {
+          "name": "G1",
           "from_schema": "http://example.org/dh-stepper-example",
           "rank": 5,
-          "alias": "B1",
-          "owner": "B",
+          "alias": "G1",
+          "owner": "MetaG",
           "domain_of": [
-            "B"
+            "MetaG"
           ],
-          "slot_group": "B",
+          "slot_group": "MetaG",
           "range": "string",
           "required": true
         },
-        "B2": {
-          "name": "B2",
+        "G2": {
+          "name": "G2",
           "from_schema": "http://example.org/dh-stepper-example",
           "rank": 6,
-          "alias": "B2",
-          "owner": "B",
+          "alias": "G2",
+          "owner": "MetaG",
           "domain_of": [
-            "B"
+            "MetaG"
           ],
-          "slot_group": "B",
+          "slot_group": "MetaG",
           "range": "string",
           "required": true
         },
-        "B3": {
-          "name": "B3",
+        "G3": {
+          "name": "G3",
           "from_schema": "http://example.org/dh-stepper-example",
           "rank": 7,
-          "alias": "B3",
-          "owner": "B",
+          "alias": "G3",
+          "owner": "MetaG",
           "domain_of": [
-            "B"
+            "MetaG"
           ],
-          "slot_group": "B",
+          "slot_group": "MetaG",
           "range": "string",
           "required": true
         },
@@ -417,14 +417,14 @@
           "rank": 1,
           "identifier": true,
           "alias": "id",
-          "owner": "B",
+          "owner": "MetaG",
           "domain_of": [
             "View",
             "View",
-            "Common",
-            "A"
+            "Soil",
+            "MetaT"
           ],
-          "slot_group": "Basic info",
+          "slot_group": "Sample info",
           "range": "string"
         },
         "name": {
@@ -432,14 +432,14 @@
           "from_schema": "http://example.org/dh-stepper-example",
           "rank": 2,
           "alias": "name",
-          "owner": "B",
+          "owner": "MetaG",
           "domain_of": [
             "View",
             "View",
-            "Common",
-            "A"
+            "Soil",
+            "MetaT"
           ],
-          "slot_group": "Basic info",
+          "slot_group": "Sample info",
           "range": "string",
           "required": true
         },
@@ -449,64 +449,64 @@
           "rank": 3,
           "multivalued": true,
           "alias": "type",
-          "owner": "B",
+          "owner": "MetaG",
           "domain_of": [
             "View",
             "View",
-            "Common",
-            "A"
+            "Soil",
+            "MetaT"
           ],
-          "slot_group": "Basic info",
+          "slot_group": "Sample info",
           "range": "TypeOptions",
           "required": true
         }
       }
     },
-    "C": {
-      "name": "C",
+    "MetaP": {
+      "name": "MetaP",
       "is_a": "View",
       "slots": [
-        "C1",
-        "C2",
-        "C3"
+        "P1",
+        "P2",
+        "P3"
       ],
       "attributes": {
-        "C1": {
-          "name": "C1",
+        "P1": {
+          "name": "P1",
           "from_schema": "http://example.org/dh-stepper-example",
           "rank": 5,
-          "alias": "C1",
-          "owner": "C",
+          "alias": "P1",
+          "owner": "MetaP",
           "domain_of": [
-            "C"
+            "MetaP"
           ],
-          "slot_group": "C",
+          "slot_group": "MetaP",
           "range": "string",
           "required": true
         },
-        "C2": {
-          "name": "C2",
+        "P2": {
+          "name": "P2",
           "from_schema": "http://example.org/dh-stepper-example",
           "rank": 6,
-          "alias": "C2",
-          "owner": "C",
+          "alias": "P2",
+          "owner": "MetaP",
           "domain_of": [
-            "C"
+            "MetaP"
           ],
-          "slot_group": "C",
+          "slot_group": "MetaP",
           "range": "string",
           "required": true
         },
-        "C3": {
-          "name": "C3",
+        "P3": {
+          "name": "P3",
           "from_schema": "http://example.org/dh-stepper-example",
           "rank": 7,
-          "alias": "C3",
-          "owner": "C",
+          "alias": "P3",
+          "owner": "MetaP",
           "domain_of": [
-            "C"
+            "MetaP"
           ],
-          "slot_group": "C",
+          "slot_group": "MetaP",
           "range": "string",
           "required": true
         },
@@ -516,15 +516,15 @@
           "rank": 1,
           "identifier": true,
           "alias": "id",
-          "owner": "C",
+          "owner": "MetaP",
           "domain_of": [
             "View",
             "View",
-            "Common",
-            "A",
-            "B"
+            "Soil",
+            "MetaT",
+            "MetaG"
           ],
-          "slot_group": "Basic info",
+          "slot_group": "Sample info",
           "range": "string"
         },
         "name": {
@@ -532,15 +532,15 @@
           "from_schema": "http://example.org/dh-stepper-example",
           "rank": 2,
           "alias": "name",
-          "owner": "C",
+          "owner": "MetaP",
           "domain_of": [
             "View",
             "View",
-            "Common",
-            "A",
-            "B"
+            "Soil",
+            "MetaT",
+            "MetaG"
           ],
-          "slot_group": "Basic info",
+          "slot_group": "Sample info",
           "range": "string",
           "required": true
         },
@@ -550,15 +550,15 @@
           "rank": 3,
           "multivalued": true,
           "alias": "type",
-          "owner": "C",
+          "owner": "MetaP",
           "domain_of": [
             "View",
             "View",
-            "Common",
-            "A",
-            "B"
+            "Soil",
+            "MetaT",
+            "MetaG"
           ],
-          "slot_group": "Basic info",
+          "slot_group": "Sample info",
           "range": "TypeOptions",
           "required": true
         }
