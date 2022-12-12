@@ -5,11 +5,34 @@ import Stepper from './components/Stepper'
 import schema from './schema.json'
 
 // controls which field is used to merge data from different DH views
-const ID_FIELD = 'id'
+const ID_FIELD = 'source_mat_id'
 // controls which rows are shown in each view
 const TYPE_FIELD = 'type'
 
-const TEMPLATES = ['Soil', 'MetaT', 'MetaG', 'MetaP']
+const BIOSAMPLE_CLASSES = [
+  'air', 
+  'biofilm', 
+  'bioscales',
+  'built_env', 
+  'host-associated', 
+  'plant-associated', 
+  'sediment', 
+  'soil', 
+  'wastewater_sludge',
+  'water'
+]
+
+const MIXINS = [
+  'emsl_mixin',
+  'jgi_mg_mixin',
+  'jgi_mt_mixin',
+]
+
+const TEMPLATES = [
+  BIOSAMPLE_CLASSES[7],
+  MIXINS[0],
+  MIXINS[2]
+]
 
 function App() {
   const dhRef = useRef(null)
