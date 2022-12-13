@@ -6,8 +6,8 @@ import schema from './schema.json'
 
 // controls which field is used to merge data from different DH views
 const ID_FIELD = 'source_mat_id'
-// controls which rows are shown in each view
-const TYPE_FIELD = 'type'
+// used in determining which rows are shown in each view
+const TYPE_FIELD = 'analysis_type'
 
 const BIOSAMPLE_CLASSES = [
   'air', 
@@ -19,19 +19,20 @@ const BIOSAMPLE_CLASSES = [
   'sediment', 
   'soil', 
   'wastewater_sludge',
-  'water'
+  'water',
 ]
 
-const MIXINS = [
-  'emsl_mixin',
-  'jgi_mg_mixin',
-  'jgi_mt_mixin',
-]
+const EMSL = 'emsl_mixin'
+const JGI_MG = 'jgi_mg_mixin'
+const JGT_MT = 'jgi_mt_mixin'
 
+// in the real submission portal, this list needs to be the output
+// of the omics types checkboxes
 const TEMPLATES = [
-  BIOSAMPLE_CLASSES[7],
-  MIXINS[0],
-  MIXINS[2]
+  BIOSAMPLE_CLASSES[8],
+  EMSL,
+  JGI_MG,
+  JGT_MT,
 ]
 
 function App() {
@@ -72,22 +73,34 @@ function App() {
   function handleAddTestData() {
     dhRef.current.loadDataObjects([
       {
-        id: 1,
-        name: 'x',
-        type: ['MetaT'],
-        depth: 'asdf'
+        samp_name: 'v',
+        source_mat_id: 'UUID:1',
+        analysis_type: ['metabolomics'],
+        env_broad_scale: 'ENVO:01'
       },
       {
-        id: 2,
-        name: 'y',
-        type: ['MetaG'],
-        depth: 'qwert'
+        samp_name: 'w',
+        source_mat_id: 'UUID:2',
+        analysis_type: ['metagenomics'],
+        env_broad_scale: 'ENVO:01'
       },
       {
-        id: 3,
-        name: 'z',
-        type: ['MetaT', 'MetaP'],
-        depth: 'xcvbn'
+        samp_name: 'x',
+        source_mat_id: 'UUID:3',
+        analysis_type: ['metagenomics', 'metaproteomics'],
+        env_broad_scale: 'ENVO:01'
+      },
+      {
+        samp_name: 'y',
+        source_mat_id: 'UUID:4',
+        analysis_type: ['metatranscriptomics'],
+        env_broad_scale: 'ENVO:02'
+      },
+      {
+        samp_name: 'z',
+        source_mat_id: 'UUID:5',
+        analysis_type: ['natural organic matter'],
+        env_broad_scale: 'ENVO:02'
       },
     ])
   }
@@ -109,12 +122,27 @@ function App() {
     if (activeTemplate === TEMPLATES[0]) {
       return data
     } else {
-      return data.filter(row => row[TYPE_FIELD] && row[TYPE_FIELD].includes(activeTemplate))
+      return data.filter(row => {
+        const row_types = row[TYPE_FIELD]
+        if (!row_types) {
+          return false
+        }
+        if (activeTemplate === EMSL) {
+          return row_types.includes('metaproteomics') ||
+           row_types.includes('metabolomics') ||
+           row_types.includes('natural organic matter')
+        } else if (activeTemplate === JGI_MG) {
+          return row_types.includes('metagenomics')
+        } else if (activeTemplate === JGT_MT) {
+          return row_types.includes('metatranscriptomics')
+        }
+        return false
+      })
     }
   }, [data, activeTemplate])
 
 
-  const idCol = dhRef.current?.getFieldYCoordinates()[ID_FIELD]
+  const idCol = dhRef.current?.getFields().findIndex(f => f.name === ID_FIELD)
   
   return (
     <div className='p-4'>
