@@ -42,6 +42,7 @@ function App() {
   const [invalidCells, setInvalidCells] = useState({})
 
   function handleStepChange(nextStep) {
+    doValidate()
     const current = dhRef.current.getDataObjects(false)
     // TODO: open bug in DH re: delimiter mismatch
     for (const row of current) {
@@ -108,6 +109,10 @@ function App() {
   const activeTemplate = TEMPLATES[active]
 
   function handleValidate() {
+    doValidate()
+  }
+
+  function doValidate() {
     dhRef.current.validate()
     setInvalidCells(prev => {
       return {
@@ -161,13 +166,13 @@ function App() {
           <button className="btn btn-outline-secondary mt-2" onClick={handleAddTestData}>Test Data</button>
         </div>
         <div className="col-5 border-left">
-          <div className='alert alert-warning small'>
-            <h5 className='alert-heading'>Validation</h5>
-            <pre>{JSON.stringify(invalidCells, null, 2)}</pre>
-          </div>
           <div className='alert alert-secondary small mt-2'>
             <h5 className='alert-heading'>Data</h5>
             <pre>{JSON.stringify(data, null, 2)}</pre>
+          </div>
+          <div className='alert alert-warning small'>
+            <h5 className='alert-heading'>Validation</h5>
+            <pre>{JSON.stringify(invalidCells, null, 2)}</pre>
           </div>
         </div>
 
