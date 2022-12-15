@@ -4,7 +4,7 @@ import { DataHarmonizer as DH } from 'data-harmonizer'
 
 import style from './DataHarmonizer.module.scss'
 
-function DataHarmonizer({ schema, template, data, dhRef, invalidCells, readOnlyCols = [] }) {
+function DataHarmonizer({ schema, template, data, dhRef, invalidCells, allowNewRows = true, readOnlyCols = [] }) {
   const gridRef = useRef(null)
 
   useEffect(() => {
@@ -19,7 +19,12 @@ function DataHarmonizer({ schema, template, data, dhRef, invalidCells, readOnlyC
       return
     }
     dhRef.current.loadDataObjects(data)
-  }, [data, dhRef])
+    if (allowNewRows) {
+      dhRef.current.hot.updateSettings({maxRows: data.length + 100})
+    } else {
+      dhRef.current.hot.updateSettings({maxRows: data.length})
+    }
+  }, [data, allowNewRows, dhRef])
 
   useEffect(() => {
     if (!dhRef.current || !invalidCells) {

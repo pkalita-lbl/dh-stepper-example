@@ -183,9 +183,10 @@ function App() {
           <DataHarmonizer 
             schema={schema} 
             template={activeTemplate} 
+            allowNewRows={activeTemplate === ENVIRONMENT_TEMPLATE}
             data={filteredData} 
             invalidCells={invalidCells[activeTemplate]}
-            readOnlyCols={activeTemplate === TEMPLATES[0] ? [] : [idCol]}
+            readOnlyCols={activeTemplate === ENVIRONMENT_TEMPLATE ? [] : [idCol]}
             dhRef={dhRef} 
           />
           <button className="btn btn-outline-secondary mt-2" onClick={handleAddTestData}>Test Data</button>
