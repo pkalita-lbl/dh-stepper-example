@@ -1,13 +1,19 @@
 import React, { useState, useRef, useMemo } from 'react'
+import produce from 'immer'
 import DataHarmonizer from './components/DataHarmonizer'
 import Stepper from './components/Stepper'
 
 import schema from './schema.json'
 
 // controls which field is used to merge data from different DH views
-const ID_FIELD = 'source_mat_id'
+const SCHEMA_ID = 'source_mat_id'
+const INTERNAL_ID = '_id'
+
 // used in determining which rows are shown in each view
 const TYPE_FIELD = 'analysis_type'
+
+const COMMON_COLUMN_MIXIN = 'dh_mutliview_common_columns'
+const COMMON_COLUMNS = schema.classes[COMMON_COLUMN_MIXIN].slots
 
 const BIOSAMPLE_CLASSES = [
   'air', 
@@ -34,6 +40,27 @@ const TEMPLATES = [
   JGI_MG,
   JGT_MT,
 ]
+const ENVIRONMENT_TEMPLATE = TEMPLATES[0]
+
+function rowIsVisibleForTemplate(row, template) {
+  if (template === ENVIRONMENT_TEMPLATE) {
+    return true
+  }
+  const row_types = row[ENVIRONMENT_TEMPLATE][TYPE_FIELD]
+  if (!row_types) {
+    return false
+  }
+  if (template === EMSL) {
+    return row_types.includes('metaproteomics') ||
+      row_types.includes('metabolomics') ||
+      row_types.includes('natural organic matter')
+  } else if (template === JGI_MG) {
+    return row_types.includes('metagenomics')
+  } else if (template === JGT_MT) {
+    return row_types.includes('metatranscriptomics')
+  }
+  return false
+}
 
 function App() {
   const dhRef = useRef(null)
@@ -41,8 +68,27 @@ function App() {
   const [data, setData] = useState([])
   const [invalidCells, setInvalidCells] = useState({})
 
+  const activeTemplate = TEMPLATES[active]
+
   function handleStepChange(nextStep) {
     doValidate()
+    handleSync()
+    // need to populate common columns for upcoming view
+    const nextTemplate = TEMPLATES[nextStep]
+    setData(produce(data => {
+      for (const row of data) {
+        if (row[nextTemplate] == undefined && rowIsVisibleForTemplate(row, nextTemplate)) {
+          row[nextTemplate] = {}
+          for (const col of COMMON_COLUMNS) {
+            row[nextTemplate][col] = row[ENVIRONMENT_TEMPLATE][col]
+          }
+        }
+      }
+    }))
+    setActive(nextStep)
+  }
+
+  function handleSync() {
     const current = dhRef.current.getDataObjects(false)
     // TODO: open bug in DH re: delimiter mismatch
     for (const row of current) {
@@ -52,23 +98,20 @@ function App() {
         }
       }
     }
-    setActive(nextStep)
-    setData(data => {
-      if (data.length === 0) {
-        return current
-      } else {
-        const merged = []
-        for (const row of data) {
-          const rowId = row[ID_FIELD]
-          const update = current.find(r => r[ID_FIELD] === rowId)
-          merged.push({
-            ...row,
-            ...update
+    setData(produce(data => {
+      for (const row of current) {
+        const rowId = row[SCHEMA_ID]
+        const mergeRow = data.find(d => d[INTERNAL_ID] === rowId)
+        if (mergeRow == undefined && activeTemplate === ENVIRONMENT_TEMPLATE) {
+          data.push({
+            [INTERNAL_ID]: rowId,
+            [activeTemplate]: row
           })
+        } else {
+          mergeRow[activeTemplate] = row
         }
-        return merged
       }
-    })
+    }))
   }
 
   function handleAddTestData() {
@@ -106,8 +149,6 @@ function App() {
     ])
   }
 
-  const activeTemplate = TEMPLATES[active]
-
   function handleValidate() {
     doValidate()
   }
@@ -124,30 +165,13 @@ function App() {
 
 
   const filteredData = useMemo(() => {
-    if (activeTemplate === TEMPLATES[0]) {
-      return data
-    } else {
-      return data.filter(row => {
-        const row_types = row[TYPE_FIELD]
-        if (!row_types) {
-          return false
-        }
-        if (activeTemplate === EMSL) {
-          return row_types.includes('metaproteomics') ||
-           row_types.includes('metabolomics') ||
-           row_types.includes('natural organic matter')
-        } else if (activeTemplate === JGI_MG) {
-          return row_types.includes('metagenomics')
-        } else if (activeTemplate === JGT_MT) {
-          return row_types.includes('metatranscriptomics')
-        }
-        return false
-      })
-    }
+    return data
+      .map(row => row[activeTemplate])
+      .filter(row => row !== undefined)
   }, [data, activeTemplate])
 
 
-  const idCol = dhRef.current?.getFields().findIndex(f => f.name === ID_FIELD)
+  const idCol = dhRef.current?.getFields().findIndex(f => f.name === SCHEMA_ID)
   
   return (
     <div className='p-4'>
@@ -155,6 +179,7 @@ function App() {
         <div className="col-7">
           <Stepper steps={TEMPLATES} active={active} onChange={handleStepChange} />
           <button className='btn btn-warning mb-2' onClick={handleValidate}>Validate</button>
+          <button className='btn btn-warning mb-2 ml-2' onClick={handleSync}>Sync</button>
           <DataHarmonizer 
             schema={schema} 
             template={activeTemplate} 

@@ -7749,7 +7749,7 @@ slots:
     multivalued: false
     range: string
     pattern: ^(Water Injection|Dump Flood|Gas Injection|Wag Immiscible Injection|Polymer
-      Addition|Surfactant Addition|Not Applicable|other);([\+-]?\d{4}(?!\d{2}\b))((-?)((0[1-9]|1[0-2])(\3([12]\d|0[1-9]|3[01]))?|W([0-4]\d|5[0-2])(-?[1-7])?|(00[1-9]|0[1-9]\d|[12]\d{2}|3([0-5]\d|6[1-6])))([T\s]((([01]\d|2[0-3])((:?)[0-5]\d)?|24\:?00)([\.,]\d+(?!:))?)?(\17[0-5]\d([\.,]\d+)?)?([zZ]|([\+-])([01]\d|2[0-3]):?([0-5]\d)?)?)?)?$
+      Addition|Surfactant Addition|Not Applicable|other);([\+-]?\d{4}(?!\d{2}\b))((-?)((0[1-9]|1[0-2])(\3([12]\d|0[1-9]|3[01]))?|W([0-4]\d|5[0-2])(-?[1-7])?|(00[1-9]|0[1-9]\d|[12]\d{2}|3([0-5]\d|6[1-6])))([T\s]((([01]\d|2[0-3])((:?)[0-5]\d)?|24:?00)([\.,]\d+(?!:))?)?(\17[0-5]\d([\.,]\d+)?)?([zZ]|([\+-])([01]\d|2[0-3]):?([0-5]\d)?)?)?)?$
   biocide:
     name: biocide
     annotations:
@@ -14677,7 +14677,7 @@ slots:
     mappings:
     - prov:startedAtTime
     range: datetime
-    pattern: ^([\+-]?\d{4}(?!\d{2}\b))((-?)((0[1-9]|1[0-2])(\3([12]\d|0[1-9]|3[01]))?|W([0-4]\d|5[0-2])(-?[1-7])?|(00[1-9]|0[1-9]\d|[12]\d{2}|3([0-5]\d|6[1-6])))([T\s]((([01]\d|2[0-3])((:?)[0-5]\d)?|24\:?00)([\.,]\d+(?!:))?)?(\17[0-5]\d([\.,]\d+)?)?([zZ]|([\+-])([01]\d|2[0-3]):?([0-5]\d)?)?)?)?$
+    pattern: ^([\+-]?\d{4}(?!\d{2}\b))((-?)((0[1-9]|1[0-2])(\3([12]\d|0[1-9]|3[01]))?|W([0-4]\d|5[0-2])(-?[1-7])?|(00[1-9]|0[1-9]\d|[12]\d{2}|3([0-5]\d|6[1-6])))([T\s]((([01]\d|2[0-3])((:?)[0-5]\d)?|24:?00)([\.,]\d+(?!:))?)?(\17[0-5]\d([\.,]\d+)?)?([zZ]|([\+-])([01]\d|2[0-3]):?([0-5]\d)?)?)?)?$
   ended_at_time:
     name: ended_at_time
     comments:
@@ -14687,7 +14687,7 @@ slots:
     mappings:
     - prov:endedAtTime
     range: datetime
-    pattern: ^([\+-]?\d{4}(?!\d{2}\b))((-?)((0[1-9]|1[0-2])(\3([12]\d|0[1-9]|3[01]))?|W([0-4]\d|5[0-2])(-?[1-7])?|(00[1-9]|0[1-9]\d|[12]\d{2}|3([0-5]\d|6[1-6])))([T\s]((([01]\d|2[0-3])((:?)[0-5]\d)?|24\:?00)([\.,]\d+(?!:))?)?(\17[0-5]\d([\.,]\d+)?)?([zZ]|([\+-])([01]\d|2[0-3]):?([0-5]\d)?)?)?)?$
+    pattern: ^([\+-]?\d{4}(?!\d{2}\b))((-?)((0[1-9]|1[0-2])(\3([12]\d|0[1-9]|3[01]))?|W([0-4]\d|5[0-2])(-?[1-7])?|(00[1-9]|0[1-9]\d|[12]\d{2}|3([0-5]\d|6[1-6])))([T\s]((([01]\d|2[0-3])((:?)[0-5]\d)?|24:?00)([\.,]\d+(?!:))?)?(\17[0-5]\d([\.,]\d+)?)?([zZ]|([\+-])([01]\d|2[0-3]):?([0-5]\d)?)?)?)?$
   has_raw_value:
     name: has_raw_value
     description: The value that was specified for an annotation in raw form, i.e.
@@ -15793,7 +15793,7 @@ classes:
         notes:
         - The source material IS the Globally Unique ID
         required: true
-        pattern: '[^\:\n\r]+\:[^\:\n\r]+'
+        pattern: '[^:\n\r]+:[^:\n\r]+'
       temp:
         name: temp
         annotations:
@@ -17794,7 +17794,7 @@ classes:
         notes:
         - The source material IS the Globally Unique ID
         required: true
-        pattern: '[^\:\n\r]+\:[^\:\n\r]+'
+        pattern: '[^:\n\r]+:[^:\n\r]+'
       sulfate:
         name: sulfate
         annotations:
@@ -19188,7 +19188,7 @@ classes:
         notes:
         - The source material IS the Globally Unique ID
         required: true
-        pattern: '[^\:\n\r]+\:[^\:\n\r]+'
+        pattern: '[^:\n\r]+:[^:\n\r]+'
       temp:
         name: temp
         annotations:
@@ -19439,7 +19439,7 @@ classes:
         slot_group: MIxS
         range: string
         required: false
-        pattern: ^\S+.*\S+;[-+]?[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)? \S+;([\+-]?\d{4}(?!\d{2}\b))((-?)((0[1-9]|1[0-2])(\3([12]\d|0[1-9]|3[01]))?|W([0-4]\d|5[0-2])(-?[1-7])?|(00[1-9]|0[1-9]\d|[12]\d{2}|3([0-5]\d|6[1-6])))([T\s]((([01]\d|2[0-3])((:?)[0-5]\d)?|24\:?00)([\.,]\d+(?!:))?)?(\17[0-5]\d([\.,]\d+)?)?([zZ]|([\+-])([01]\d|2[0-3]):?([0-5]\d)?)?)?)?$
+        pattern: ^\S+.*\S+;[-+]?[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)? \S+;([\+-]?\d{4}(?!\d{2}\b))((-?)((0[1-9]|1[0-2])(\3([12]\d|0[1-9]|3[01]))?|W([0-4]\d|5[0-2])(-?[1-7])?|(00[1-9]|0[1-9]\d|[12]\d{2}|3([0-5]\d|6[1-6])))([T\s]((([01]\d|2[0-3])((:?)[0-5]\d)?|24:?00)([\.,]\d+(?!:))?)?(\17[0-5]\d([\.,]\d+)?)?([zZ]|([\+-])([01]\d|2[0-3]):?([0-5]\d)?)?)?)?$
       al_sat:
         name: al_sat
         annotations:
@@ -20108,7 +20108,7 @@ classes:
         slot_group: MIxS
         range: string
         required: false
-        pattern: ^\S+.*\S+;([\+-]?\d{4}(?!\d{2}\b))((-?)((0[1-9]|1[0-2])(\3([12]\d|0[1-9]|3[01]))?|W([0-4]\d|5[0-2])(-?[1-7])?|(00[1-9]|0[1-9]\d|[12]\d{2}|3([0-5]\d|6[1-6])))([T\s]((([01]\d|2[0-3])((:?)[0-5]\d)?|24\:?00)([\.,]\d+(?!:))?)?(\17[0-5]\d([\.,]\d+)?)?([zZ]|([\+-])([01]\d|2[0-3]):?([0-5]\d)?)?)?)?$
+        pattern: ^\S+.*\S+;([\+-]?\d{4}(?!\d{2}\b))((-?)((0[1-9]|1[0-2])(\3([12]\d|0[1-9]|3[01]))?|W([0-4]\d|5[0-2])(-?[1-7])?|(00[1-9]|0[1-9]\d|[12]\d{2}|3([0-5]\d|6[1-6])))([T\s]((([01]\d|2[0-3])((:?)[0-5]\d)?|24:?00)([\.,]\d+(?!:))?)?(\17[0-5]\d([\.,]\d+)?)?([zZ]|([\+-])([01]\d|2[0-3]):?([0-5]\d)?)?)?)?$
       profile_position:
         name: profile_position
         annotations:
@@ -25374,7 +25374,7 @@ classes:
         notes:
         - The source material IS the Globally Unique ID
         required: true
-        pattern: '[^\:\n\r]+\:[^\:\n\r]+'
+        pattern: '[^:\n\r]+:[^:\n\r]+'
       temp:
         name: temp
         annotations:
@@ -27648,7 +27648,7 @@ classes:
         notes:
         - The source material IS the Globally Unique ID
         required: true
-        pattern: '[^\:\n\r]+\:[^\:\n\r]+'
+        pattern: '[^:\n\r]+:[^:\n\r]+'
       sulfate:
         name: sulfate
         annotations:
@@ -28384,7 +28384,7 @@ classes:
         range: string
         required: true
         pattern: ^(Water Injection|Dump Flood|Gas Injection|Wag Immiscible Injection|Polymer
-          Addition|Surfactant Addition|Not Applicable|other);([\+-]?\d{4}(?!\d{2}\b))((-?)((0[1-9]|1[0-2])(\3([12]\d|0[1-9]|3[01]))?|W([0-4]\d|5[0-2])(-?[1-7])?|(00[1-9]|0[1-9]\d|[12]\d{2}|3([0-5]\d|6[1-6])))([T\s]((([01]\d|2[0-3])((:?)[0-5]\d)?|24\:?00)([\.,]\d+(?!:))?)?(\17[0-5]\d([\.,]\d+)?)?([zZ]|([\+-])([01]\d|2[0-3]):?([0-5]\d)?)?)?)?$
+          Addition|Surfactant Addition|Not Applicable|other);([\+-]?\d{4}(?!\d{2}\b))((-?)((0[1-9]|1[0-2])(\3([12]\d|0[1-9]|3[01]))?|W([0-4]\d|5[0-2])(-?[1-7])?|(00[1-9]|0[1-9]\d|[12]\d{2}|3([0-5]\d|6[1-6])))([T\s]((([01]\d|2[0-3])((:?)[0-5]\d)?|24:?00)([\.,]\d+(?!:))?)?(\17[0-5]\d([\.,]\d+)?)?([zZ]|([\+-])([01]\d|2[0-3]):?([0-5]\d)?)?)?)?$
       biocide:
         name: biocide
         annotations:
@@ -30523,7 +30523,7 @@ classes:
         notes:
         - The source material IS the Globally Unique ID
         required: true
-        pattern: '[^\:\n\r]+\:[^\:\n\r]+'
+        pattern: '[^:\n\r]+:[^:\n\r]+'
       sulfate:
         name: sulfate
         annotations:
@@ -32670,7 +32670,7 @@ classes:
         notes:
         - The source material IS the Globally Unique ID
         required: true
-        pattern: '[^\:\n\r]+\:[^\:\n\r]+'
+        pattern: '[^:\n\r]+:[^:\n\r]+'
       temp:
         name: temp
         annotations:
@@ -34221,7 +34221,7 @@ classes:
         notes:
         - The source material IS the Globally Unique ID
         required: true
-        pattern: '[^\:\n\r]+\:[^\:\n\r]+'
+        pattern: '[^:\n\r]+:[^:\n\r]+'
       sulfate:
         name: sulfate
         annotations:
@@ -35787,7 +35787,7 @@ classes:
         notes:
         - The source material IS the Globally Unique ID
         required: true
-        pattern: '[^\:\n\r]+\:[^\:\n\r]+'
+        pattern: '[^:\n\r]+:[^:\n\r]+'
       temp:
         name: temp
         annotations:
@@ -38859,7 +38859,7 @@ classes:
         notes:
         - The source material IS the Globally Unique ID
         required: true
-        pattern: '[^\:\n\r]+\:[^\:\n\r]+'
+        pattern: '[^:\n\r]+:[^:\n\r]+'
       sulfate:
         name: sulfate
         annotations:
@@ -40250,7 +40250,7 @@ classes:
         notes:
         - The source material IS the Globally Unique ID
         required: true
-        pattern: '[^\:\n\r]+\:[^\:\n\r]+'
+        pattern: '[^:\n\r]+:[^:\n\r]+'
       temp:
         name: temp
         annotations:
@@ -40471,7 +40471,7 @@ classes:
         slot_group: MIxS
         range: string
         required: false
-        pattern: ^\S+.*\S+;[-+]?[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)? \S+;([\+-]?\d{4}(?!\d{2}\b))((-?)((0[1-9]|1[0-2])(\3([12]\d|0[1-9]|3[01]))?|W([0-4]\d|5[0-2])(-?[1-7])?|(00[1-9]|0[1-9]\d|[12]\d{2}|3([0-5]\d|6[1-6])))([T\s]((([01]\d|2[0-3])((:?)[0-5]\d)?|24\:?00)([\.,]\d+(?!:))?)?(\17[0-5]\d([\.,]\d+)?)?([zZ]|([\+-])([01]\d|2[0-3]):?([0-5]\d)?)?)?)?$
+        pattern: ^\S+.*\S+;[-+]?[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)? \S+;([\+-]?\d{4}(?!\d{2}\b))((-?)((0[1-9]|1[0-2])(\3([12]\d|0[1-9]|3[01]))?|W([0-4]\d|5[0-2])(-?[1-7])?|(00[1-9]|0[1-9]\d|[12]\d{2}|3([0-5]\d|6[1-6])))([T\s]((([01]\d|2[0-3])((:?)[0-5]\d)?|24:?00)([\.,]\d+(?!:))?)?(\17[0-5]\d([\.,]\d+)?)?([zZ]|([\+-])([01]\d|2[0-3]):?([0-5]\d)?)?)?)?$
       al_sat:
         name: al_sat
         annotations:
@@ -41140,7 +41140,7 @@ classes:
         slot_group: MIxS
         range: string
         required: false
-        pattern: ^\S+.*\S+;([\+-]?\d{4}(?!\d{2}\b))((-?)((0[1-9]|1[0-2])(\3([12]\d|0[1-9]|3[01]))?|W([0-4]\d|5[0-2])(-?[1-7])?|(00[1-9]|0[1-9]\d|[12]\d{2}|3([0-5]\d|6[1-6])))([T\s]((([01]\d|2[0-3])((:?)[0-5]\d)?|24\:?00)([\.,]\d+(?!:))?)?(\17[0-5]\d([\.,]\d+)?)?([zZ]|([\+-])([01]\d|2[0-3]):?([0-5]\d)?)?)?)?$
+        pattern: ^\S+.*\S+;([\+-]?\d{4}(?!\d{2}\b))((-?)((0[1-9]|1[0-2])(\3([12]\d|0[1-9]|3[01]))?|W([0-4]\d|5[0-2])(-?[1-7])?|(00[1-9]|0[1-9]\d|[12]\d{2}|3([0-5]\d|6[1-6])))([T\s]((([01]\d|2[0-3])((:?)[0-5]\d)?|24:?00)([\.,]\d+(?!:))?)?(\17[0-5]\d([\.,]\d+)?)?([zZ]|([\+-])([01]\d|2[0-3]):?([0-5]\d)?)?)?)?$
       profile_position:
         name: profile_position
         annotations:
@@ -42515,7 +42515,7 @@ classes:
         notes:
         - The source material IS the Globally Unique ID
         required: true
-        pattern: '[^\:\n\r]+\:[^\:\n\r]+'
+        pattern: '[^:\n\r]+:[^:\n\r]+'
       suspend_solids:
         name: suspend_solids
         annotations:
@@ -45165,7 +45165,7 @@ classes:
         notes:
         - The source material IS the Globally Unique ID
         required: true
-        pattern: '[^\:\n\r]+\:[^\:\n\r]+'
+        pattern: '[^:\n\r]+:[^:\n\r]+'
       sulfate:
         name: sulfate
         annotations:
@@ -46128,4 +46128,47 @@ classes:
     slots:
     - acted_on_behalf_of
     - was_informed_by
+  SubmissionRow:
+    description: represents a row of data produced by the submission portal comprised
+      of an environmental package and mixins
+    attributes:
+      air:
+        range: air
+        inlined: true
+      biofilm:
+        range: biofilm
+        inlined: true
+      bioscales:
+        range: bioscales
+        inlined: true
+      built_env:
+        range: built_env 
+        inlined: true
+      host-associated:
+        range: host-associated
+        inlined: true
+      plant-associated:
+        range: plant-associated
+        inlined: true
+      sediment:
+        range: sediment
+        inlined: true
+      soil:
+        range: soil
+        inlined: true
+      wastewater_sludge:
+        range: wastewater_sludge
+        inlined: true
+      water:
+        range: water
+        inlined: true
+      emsl_mixin:
+        range: emsl_mixin
+        inlined: true
+      jgi_mg_mixin:
+        range: jgi_mg_mixin
+        inlined: true
+      jgi_mt_mixin:
+        range: jgi_mt_mixin
+        inlined: true
 source_file: artifacts/from_sheets2linkml.yaml

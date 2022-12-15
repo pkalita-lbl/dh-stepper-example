@@ -10807,7 +10807,7 @@
       "slot_uri": "MIXS:0001009",
       "multivalued": false,
       "range": "string",
-      "pattern": "^(Water Injection|Dump Flood|Gas Injection|Wag Immiscible Injection|Polymer Addition|Surfactant Addition|Not Applicable|other);([\\+-]?\\d{4}(?!\\d{2}\\b))((-?)((0[1-9]|1[0-2])(\\3([12]\\d|0[1-9]|3[01]))?|W([0-4]\\d|5[0-2])(-?[1-7])?|(00[1-9]|0[1-9]\\d|[12]\\d{2}|3([0-5]\\d|6[1-6])))([T\\s]((([01]\\d|2[0-3])((:?)[0-5]\\d)?|24\\:?00)([\\.,]\\d+(?!:))?)?(\\17[0-5]\\d([\\.,]\\d+)?)?([zZ]|([\\+-])([01]\\d|2[0-3]):?([0-5]\\d)?)?)?)?$"
+      "pattern": "^(Water Injection|Dump Flood|Gas Injection|Wag Immiscible Injection|Polymer Addition|Surfactant Addition|Not Applicable|other);([\\+-]?\\d{4}(?!\\d{2}\\b))((-?)((0[1-9]|1[0-2])(\\3([12]\\d|0[1-9]|3[01]))?|W([0-4]\\d|5[0-2])(-?[1-7])?|(00[1-9]|0[1-9]\\d|[12]\\d{2}|3([0-5]\\d|6[1-6])))([T\\s]((([01]\\d|2[0-3])((:?)[0-5]\\d)?|24:?00)([\\.,]\\d+(?!:))?)?(\\17[0-5]\\d([\\.,]\\d+)?)?([zZ]|([\\+-])([01]\\d|2[0-3]):?([0-5]\\d)?)?)?)?$"
     },
     "biocide": {
       "name": "biocide",
@@ -19853,7 +19853,7 @@
         "prov:startedAtTime"
       ],
       "range": "datetime",
-      "pattern": "^([\\+-]?\\d{4}(?!\\d{2}\\b))((-?)((0[1-9]|1[0-2])(\\3([12]\\d|0[1-9]|3[01]))?|W([0-4]\\d|5[0-2])(-?[1-7])?|(00[1-9]|0[1-9]\\d|[12]\\d{2}|3([0-5]\\d|6[1-6])))([T\\s]((([01]\\d|2[0-3])((:?)[0-5]\\d)?|24\\:?00)([\\.,]\\d+(?!:))?)?(\\17[0-5]\\d([\\.,]\\d+)?)?([zZ]|([\\+-])([01]\\d|2[0-3]):?([0-5]\\d)?)?)?)?$"
+      "pattern": "^([\\+-]?\\d{4}(?!\\d{2}\\b))((-?)((0[1-9]|1[0-2])(\\3([12]\\d|0[1-9]|3[01]))?|W([0-4]\\d|5[0-2])(-?[1-7])?|(00[1-9]|0[1-9]\\d|[12]\\d{2}|3([0-5]\\d|6[1-6])))([T\\s]((([01]\\d|2[0-3])((:?)[0-5]\\d)?|24:?00)([\\.,]\\d+(?!:))?)?(\\17[0-5]\\d([\\.,]\\d+)?)?([zZ]|([\\+-])([01]\\d|2[0-3]):?([0-5]\\d)?)?)?)?$"
     },
     "ended_at_time": {
       "name": "ended_at_time",
@@ -19865,7 +19865,7 @@
         "prov:endedAtTime"
       ],
       "range": "datetime",
-      "pattern": "^([\\+-]?\\d{4}(?!\\d{2}\\b))((-?)((0[1-9]|1[0-2])(\\3([12]\\d|0[1-9]|3[01]))?|W([0-4]\\d|5[0-2])(-?[1-7])?|(00[1-9]|0[1-9]\\d|[12]\\d{2}|3([0-5]\\d|6[1-6])))([T\\s]((([01]\\d|2[0-3])((:?)[0-5]\\d)?|24\\:?00)([\\.,]\\d+(?!:))?)?(\\17[0-5]\\d([\\.,]\\d+)?)?([zZ]|([\\+-])([01]\\d|2[0-3]):?([0-5]\\d)?)?)?)?$"
+      "pattern": "^([\\+-]?\\d{4}(?!\\d{2}\\b))((-?)((0[1-9]|1[0-2])(\\3([12]\\d|0[1-9]|3[01]))?|W([0-4]\\d|5[0-2])(-?[1-7])?|(00[1-9]|0[1-9]\\d|[12]\\d{2}|3([0-5]\\d|6[1-6])))([T\\s]((([01]\\d|2[0-3])((:?)[0-5]\\d)?|24:?00)([\\.,]\\d+(?!:))?)?(\\17[0-5]\\d([\\.,]\\d+)?)?([zZ]|([\\+-])([01]\\d|2[0-3]):?([0-5]\\d)?)?)?)?$"
     },
     "has_raw_value": {
       "name": "has_raw_value",
@@ -21643,7 +21643,7 @@
           "range": "string",
           "required": true,
           "recommended": true,
-          "pattern": "[^\\:\\n\\r]+\\:[^\\:\\n\\r]+"
+          "pattern": "[^:\\n\\r]+:[^:\\n\\r]+"
         },
         "temp": {
           "name": "temp",
@@ -23734,7 +23734,7 @@
           "range": "string",
           "required": true,
           "recommended": true,
-          "pattern": "[^\\:\\n\\r]+\\:[^\\:\\n\\r]+"
+          "pattern": "[^:\\n\\r]+:[^:\\n\\r]+"
         },
         "analysis_type": {
           "name": "analysis_type",
@@ -26729,7 +26729,7 @@
           "range": "string",
           "required": true,
           "recommended": true,
-          "pattern": "[^\\:\\n\\r]+\\:[^\\:\\n\\r]+"
+          "pattern": "[^:\\n\\r]+:[^:\\n\\r]+"
         },
         "sulfate": {
           "name": "sulfate",
@@ -30654,7 +30654,7 @@
           "range": "string",
           "required": true,
           "recommended": true,
-          "pattern": "[^\\:\\n\\r]+\\:[^\\:\\n\\r]+"
+          "pattern": "[^:\\n\\r]+:[^:\\n\\r]+"
         },
         "analysis_type": {
           "name": "analysis_type",
@@ -32384,7 +32384,7 @@
           "range": "string",
           "required": true,
           "recommended": true,
-          "pattern": "[^\\:\\n\\r]+\\:[^\\:\\n\\r]+"
+          "pattern": "[^:\\n\\r]+:[^:\\n\\r]+"
         },
         "temp": {
           "name": "temp",
@@ -32768,7 +32768,7 @@
           "slot_group": "MIxS",
           "range": "string",
           "required": false,
-          "pattern": "^\\S+.*\\S+;[-+]?[0-9]*\\.?[0-9]+([eE][-+]?[0-9]+)? \\S+;([\\+-]?\\d{4}(?!\\d{2}\\b))((-?)((0[1-9]|1[0-2])(\\3([12]\\d|0[1-9]|3[01]))?|W([0-4]\\d|5[0-2])(-?[1-7])?|(00[1-9]|0[1-9]\\d|[12]\\d{2}|3([0-5]\\d|6[1-6])))([T\\s]((([01]\\d|2[0-3])((:?)[0-5]\\d)?|24\\:?00)([\\.,]\\d+(?!:))?)?(\\17[0-5]\\d([\\.,]\\d+)?)?([zZ]|([\\+-])([01]\\d|2[0-3]):?([0-5]\\d)?)?)?)?$"
+          "pattern": "^\\S+.*\\S+;[-+]?[0-9]*\\.?[0-9]+([eE][-+]?[0-9]+)? \\S+;([\\+-]?\\d{4}(?!\\d{2}\\b))((-?)((0[1-9]|1[0-2])(\\3([12]\\d|0[1-9]|3[01]))?|W([0-4]\\d|5[0-2])(-?[1-7])?|(00[1-9]|0[1-9]\\d|[12]\\d{2}|3([0-5]\\d|6[1-6])))([T\\s]((([01]\\d|2[0-3])((:?)[0-5]\\d)?|24:?00)([\\.,]\\d+(?!:))?)?(\\17[0-5]\\d([\\.,]\\d+)?)?([zZ]|([\\+-])([01]\\d|2[0-3]):?([0-5]\\d)?)?)?)?$"
         },
         "al_sat": {
           "name": "al_sat",
@@ -33740,7 +33740,7 @@
           "slot_group": "MIxS",
           "range": "string",
           "required": false,
-          "pattern": "^\\S+.*\\S+;([\\+-]?\\d{4}(?!\\d{2}\\b))((-?)((0[1-9]|1[0-2])(\\3([12]\\d|0[1-9]|3[01]))?|W([0-4]\\d|5[0-2])(-?[1-7])?|(00[1-9]|0[1-9]\\d|[12]\\d{2}|3([0-5]\\d|6[1-6])))([T\\s]((([01]\\d|2[0-3])((:?)[0-5]\\d)?|24\\:?00)([\\.,]\\d+(?!:))?)?(\\17[0-5]\\d([\\.,]\\d+)?)?([zZ]|([\\+-])([01]\\d|2[0-3]):?([0-5]\\d)?)?)?)?$"
+          "pattern": "^\\S+.*\\S+;([\\+-]?\\d{4}(?!\\d{2}\\b))((-?)((0[1-9]|1[0-2])(\\3([12]\\d|0[1-9]|3[01]))?|W([0-4]\\d|5[0-2])(-?[1-7])?|(00[1-9]|0[1-9]\\d|[12]\\d{2}|3([0-5]\\d|6[1-6])))([T\\s]((([01]\\d|2[0-3])((:?)[0-5]\\d)?|24:?00)([\\.,]\\d+(?!:))?)?(\\17[0-5]\\d([\\.,]\\d+)?)?([zZ]|([\\+-])([01]\\d|2[0-3]):?([0-5]\\d)?)?)?)?$"
         },
         "profile_position": {
           "name": "profile_position",
@@ -36729,7 +36729,7 @@
           "slot_group": "MIxS",
           "range": "string",
           "required": false,
-          "pattern": "^\\S+.*\\S+;[-+]?[0-9]*\\.?[0-9]+([eE][-+]?[0-9]+)? \\S+;([\\+-]?\\d{4}(?!\\d{2}\\b))((-?)((0[1-9]|1[0-2])(\\3([12]\\d|0[1-9]|3[01]))?|W([0-4]\\d|5[0-2])(-?[1-7])?|(00[1-9]|0[1-9]\\d|[12]\\d{2}|3([0-5]\\d|6[1-6])))([T\\s]((([01]\\d|2[0-3])((:?)[0-5]\\d)?|24\\:?00)([\\.,]\\d+(?!:))?)?(\\17[0-5]\\d([\\.,]\\d+)?)?([zZ]|([\\+-])([01]\\d|2[0-3]):?([0-5]\\d)?)?)?)?$"
+          "pattern": "^\\S+.*\\S+;[-+]?[0-9]*\\.?[0-9]+([eE][-+]?[0-9]+)? \\S+;([\\+-]?\\d{4}(?!\\d{2}\\b))((-?)((0[1-9]|1[0-2])(\\3([12]\\d|0[1-9]|3[01]))?|W([0-4]\\d|5[0-2])(-?[1-7])?|(00[1-9]|0[1-9]\\d|[12]\\d{2}|3([0-5]\\d|6[1-6])))([T\\s]((([01]\\d|2[0-3])((:?)[0-5]\\d)?|24:?00)([\\.,]\\d+(?!:))?)?(\\17[0-5]\\d([\\.,]\\d+)?)?([zZ]|([\\+-])([01]\\d|2[0-3]):?([0-5]\\d)?)?)?)?$"
         },
         "al_sat": {
           "name": "al_sat",
@@ -37727,7 +37727,7 @@
           "slot_group": "MIxS",
           "range": "string",
           "required": false,
-          "pattern": "^\\S+.*\\S+;([\\+-]?\\d{4}(?!\\d{2}\\b))((-?)((0[1-9]|1[0-2])(\\3([12]\\d|0[1-9]|3[01]))?|W([0-4]\\d|5[0-2])(-?[1-7])?|(00[1-9]|0[1-9]\\d|[12]\\d{2}|3([0-5]\\d|6[1-6])))([T\\s]((([01]\\d|2[0-3])((:?)[0-5]\\d)?|24\\:?00)([\\.,]\\d+(?!:))?)?(\\17[0-5]\\d([\\.,]\\d+)?)?([zZ]|([\\+-])([01]\\d|2[0-3]):?([0-5]\\d)?)?)?)?$"
+          "pattern": "^\\S+.*\\S+;([\\+-]?\\d{4}(?!\\d{2}\\b))((-?)((0[1-9]|1[0-2])(\\3([12]\\d|0[1-9]|3[01]))?|W([0-4]\\d|5[0-2])(-?[1-7])?|(00[1-9]|0[1-9]\\d|[12]\\d{2}|3([0-5]\\d|6[1-6])))([T\\s]((([01]\\d|2[0-3])((:?)[0-5]\\d)?|24:?00)([\\.,]\\d+(?!:))?)?(\\17[0-5]\\d([\\.,]\\d+)?)?([zZ]|([\\+-])([01]\\d|2[0-3]):?([0-5]\\d)?)?)?)?$"
         },
         "profile_position": {
           "name": "profile_position",
@@ -38907,7 +38907,7 @@
           "range": "string",
           "required": true,
           "recommended": true,
-          "pattern": "[^\\:\\n\\r]+\\:[^\\:\\n\\r]+"
+          "pattern": "[^:\\n\\r]+:[^:\\n\\r]+"
         },
         "analysis_type": {
           "name": "analysis_type",
@@ -45416,7 +45416,7 @@
           "range": "string",
           "required": true,
           "recommended": true,
-          "pattern": "[^\\:\\n\\r]+\\:[^\\:\\n\\r]+"
+          "pattern": "[^:\\n\\r]+:[^:\\n\\r]+"
         },
         "temp": {
           "name": "temp",
@@ -52327,7 +52327,7 @@
           "range": "string",
           "required": true,
           "recommended": true,
-          "pattern": "[^\\:\\n\\r]+\\:[^\\:\\n\\r]+"
+          "pattern": "[^:\\n\\r]+:[^:\\n\\r]+"
         },
         "analysis_type": {
           "name": "analysis_type",
@@ -55587,7 +55587,7 @@
           "range": "string",
           "required": true,
           "recommended": true,
-          "pattern": "[^\\:\\n\\r]+\\:[^\\:\\n\\r]+"
+          "pattern": "[^:\\n\\r]+:[^:\\n\\r]+"
         },
         "sulfate": {
           "name": "sulfate",
@@ -59638,7 +59638,7 @@
           "range": "string",
           "required": true,
           "recommended": true,
-          "pattern": "[^\\:\\n\\r]+\\:[^\\:\\n\\r]+"
+          "pattern": "[^:\\n\\r]+:[^:\\n\\r]+"
         },
         "sulfate": {
           "name": "sulfate",
@@ -60709,7 +60709,7 @@
           "slot_group": "MIxS core",
           "range": "string",
           "required": true,
-          "pattern": "^(Water Injection|Dump Flood|Gas Injection|Wag Immiscible Injection|Polymer Addition|Surfactant Addition|Not Applicable|other);([\\+-]?\\d{4}(?!\\d{2}\\b))((-?)((0[1-9]|1[0-2])(\\3([12]\\d|0[1-9]|3[01]))?|W([0-4]\\d|5[0-2])(-?[1-7])?|(00[1-9]|0[1-9]\\d|[12]\\d{2}|3([0-5]\\d|6[1-6])))([T\\s]((([01]\\d|2[0-3])((:?)[0-5]\\d)?|24\\:?00)([\\.,]\\d+(?!:))?)?(\\17[0-5]\\d([\\.,]\\d+)?)?([zZ]|([\\+-])([01]\\d|2[0-3]):?([0-5]\\d)?)?)?)?$"
+          "pattern": "^(Water Injection|Dump Flood|Gas Injection|Wag Immiscible Injection|Polymer Addition|Surfactant Addition|Not Applicable|other);([\\+-]?\\d{4}(?!\\d{2}\\b))((-?)((0[1-9]|1[0-2])(\\3([12]\\d|0[1-9]|3[01]))?|W([0-4]\\d|5[0-2])(-?[1-7])?|(00[1-9]|0[1-9]\\d|[12]\\d{2}|3([0-5]\\d|6[1-6])))([T\\s]((([01]\\d|2[0-3])((:?)[0-5]\\d)?|24:?00)([\\.,]\\d+(?!:))?)?(\\17[0-5]\\d([\\.,]\\d+)?)?([zZ]|([\\+-])([01]\\d|2[0-3]):?([0-5]\\d)?)?)?)?$"
         },
         "biocide": {
           "name": "biocide",
@@ -63941,7 +63941,7 @@
           "range": "string",
           "required": true,
           "recommended": true,
-          "pattern": "[^\\:\\n\\r]+\\:[^\\:\\n\\r]+"
+          "pattern": "[^:\\n\\r]+:[^:\\n\\r]+"
         },
         "sulfate": {
           "name": "sulfate",
@@ -64878,7 +64878,7 @@
           "slot_group": "MIxS core",
           "range": "string",
           "required": true,
-          "pattern": "^(Water Injection|Dump Flood|Gas Injection|Wag Immiscible Injection|Polymer Addition|Surfactant Addition|Not Applicable|other);([\\+-]?\\d{4}(?!\\d{2}\\b))((-?)((0[1-9]|1[0-2])(\\3([12]\\d|0[1-9]|3[01]))?|W([0-4]\\d|5[0-2])(-?[1-7])?|(00[1-9]|0[1-9]\\d|[12]\\d{2}|3([0-5]\\d|6[1-6])))([T\\s]((([01]\\d|2[0-3])((:?)[0-5]\\d)?|24\\:?00)([\\.,]\\d+(?!:))?)?(\\17[0-5]\\d([\\.,]\\d+)?)?([zZ]|([\\+-])([01]\\d|2[0-3]):?([0-5]\\d)?)?)?)?$"
+          "pattern": "^(Water Injection|Dump Flood|Gas Injection|Wag Immiscible Injection|Polymer Addition|Surfactant Addition|Not Applicable|other);([\\+-]?\\d{4}(?!\\d{2}\\b))((-?)((0[1-9]|1[0-2])(\\3([12]\\d|0[1-9]|3[01]))?|W([0-4]\\d|5[0-2])(-?[1-7])?|(00[1-9]|0[1-9]\\d|[12]\\d{2}|3([0-5]\\d|6[1-6])))([T\\s]((([01]\\d|2[0-3])((:?)[0-5]\\d)?|24:?00)([\\.,]\\d+(?!:))?)?(\\17[0-5]\\d([\\.,]\\d+)?)?([zZ]|([\\+-])([01]\\d|2[0-3]):?([0-5]\\d)?)?)?)?$"
         },
         "biocide": {
           "name": "biocide",
@@ -68192,7 +68192,7 @@
           "range": "string",
           "required": true,
           "recommended": true,
-          "pattern": "[^\\:\\n\\r]+\\:[^\\:\\n\\r]+"
+          "pattern": "[^:\\n\\r]+:[^:\\n\\r]+"
         },
         "sulfate": {
           "name": "sulfate",
@@ -71453,7 +71453,7 @@
           "range": "string",
           "required": true,
           "recommended": true,
-          "pattern": "[^\\:\\n\\r]+\\:[^\\:\\n\\r]+"
+          "pattern": "[^:\\n\\r]+:[^:\\n\\r]+"
         },
         "temp": {
           "name": "temp",
@@ -74198,7 +74198,7 @@
           "range": "string",
           "required": true,
           "recommended": true,
-          "pattern": "[^\\:\\n\\r]+\\:[^\\:\\n\\r]+"
+          "pattern": "[^:\\n\\r]+:[^:\\n\\r]+"
         },
         "analysis_type": {
           "name": "analysis_type",
@@ -76575,7 +76575,7 @@
           "range": "string",
           "required": true,
           "recommended": true,
-          "pattern": "[^\\:\\n\\r]+\\:[^\\:\\n\\r]+"
+          "pattern": "[^:\\n\\r]+:[^:\\n\\r]+"
         },
         "sulfate": {
           "name": "sulfate",
@@ -79191,7 +79191,7 @@
           "range": "string",
           "required": true,
           "recommended": true,
-          "pattern": "[^\\:\\n\\r]+\\:[^\\:\\n\\r]+"
+          "pattern": "[^:\\n\\r]+:[^:\\n\\r]+"
         },
         "sulfate": {
           "name": "sulfate",
@@ -81600,7 +81600,7 @@
           "range": "string",
           "required": true,
           "recommended": true,
-          "pattern": "[^\\:\\n\\r]+\\:[^\\:\\n\\r]+"
+          "pattern": "[^:\\n\\r]+:[^:\\n\\r]+"
         },
         "temp": {
           "name": "temp",
@@ -86766,7 +86766,7 @@
           "range": "string",
           "required": true,
           "recommended": true,
-          "pattern": "[^\\:\\n\\r]+\\:[^\\:\\n\\r]+"
+          "pattern": "[^:\\n\\r]+:[^:\\n\\r]+"
         },
         "analysis_type": {
           "name": "analysis_type",
@@ -89876,7 +89876,7 @@
           "range": "string",
           "required": true,
           "recommended": true,
-          "pattern": "[^\\:\\n\\r]+\\:[^\\:\\n\\r]+"
+          "pattern": "[^:\\n\\r]+:[^:\\n\\r]+"
         },
         "sulfate": {
           "name": "sulfate",
@@ -94202,7 +94202,7 @@
           "range": "string",
           "required": true,
           "recommended": true,
-          "pattern": "[^\\:\\n\\r]+\\:[^\\:\\n\\r]+"
+          "pattern": "[^:\\n\\r]+:[^:\\n\\r]+"
         },
         "analysis_type": {
           "name": "analysis_type",
@@ -95792,7 +95792,7 @@
           "range": "string",
           "required": true,
           "recommended": true,
-          "pattern": "[^\\:\\n\\r]+\\:[^\\:\\n\\r]+"
+          "pattern": "[^:\\n\\r]+:[^:\\n\\r]+"
         },
         "temp": {
           "name": "temp",
@@ -96132,7 +96132,7 @@
           "slot_group": "MIxS",
           "range": "string",
           "required": false,
-          "pattern": "^\\S+.*\\S+;[-+]?[0-9]*\\.?[0-9]+([eE][-+]?[0-9]+)? \\S+;([\\+-]?\\d{4}(?!\\d{2}\\b))((-?)((0[1-9]|1[0-2])(\\3([12]\\d|0[1-9]|3[01]))?|W([0-4]\\d|5[0-2])(-?[1-7])?|(00[1-9]|0[1-9]\\d|[12]\\d{2}|3([0-5]\\d|6[1-6])))([T\\s]((([01]\\d|2[0-3])((:?)[0-5]\\d)?|24\\:?00)([\\.,]\\d+(?!:))?)?(\\17[0-5]\\d([\\.,]\\d+)?)?([zZ]|([\\+-])([01]\\d|2[0-3]):?([0-5]\\d)?)?)?)?$"
+          "pattern": "^\\S+.*\\S+;[-+]?[0-9]*\\.?[0-9]+([eE][-+]?[0-9]+)? \\S+;([\\+-]?\\d{4}(?!\\d{2}\\b))((-?)((0[1-9]|1[0-2])(\\3([12]\\d|0[1-9]|3[01]))?|W([0-4]\\d|5[0-2])(-?[1-7])?|(00[1-9]|0[1-9]\\d|[12]\\d{2}|3([0-5]\\d|6[1-6])))([T\\s]((([01]\\d|2[0-3])((:?)[0-5]\\d)?|24:?00)([\\.,]\\d+(?!:))?)?(\\17[0-5]\\d([\\.,]\\d+)?)?([zZ]|([\\+-])([01]\\d|2[0-3]):?([0-5]\\d)?)?)?)?$"
         },
         "al_sat": {
           "name": "al_sat",
@@ -97104,7 +97104,7 @@
           "slot_group": "MIxS",
           "range": "string",
           "required": false,
-          "pattern": "^\\S+.*\\S+;([\\+-]?\\d{4}(?!\\d{2}\\b))((-?)((0[1-9]|1[0-2])(\\3([12]\\d|0[1-9]|3[01]))?|W([0-4]\\d|5[0-2])(-?[1-7])?|(00[1-9]|0[1-9]\\d|[12]\\d{2}|3([0-5]\\d|6[1-6])))([T\\s]((([01]\\d|2[0-3])((:?)[0-5]\\d)?|24\\:?00)([\\.,]\\d+(?!:))?)?(\\17[0-5]\\d([\\.,]\\d+)?)?([zZ]|([\\+-])([01]\\d|2[0-3]):?([0-5]\\d)?)?)?)?$"
+          "pattern": "^\\S+.*\\S+;([\\+-]?\\d{4}(?!\\d{2}\\b))((-?)((0[1-9]|1[0-2])(\\3([12]\\d|0[1-9]|3[01]))?|W([0-4]\\d|5[0-2])(-?[1-7])?|(00[1-9]|0[1-9]\\d|[12]\\d{2}|3([0-5]\\d|6[1-6])))([T\\s]((([01]\\d|2[0-3])((:?)[0-5]\\d)?|24:?00)([\\.,]\\d+(?!:))?)?(\\17[0-5]\\d([\\.,]\\d+)?)?([zZ]|([\\+-])([01]\\d|2[0-3]):?([0-5]\\d)?)?)?)?$"
         },
         "profile_position": {
           "name": "profile_position",
@@ -99612,7 +99612,7 @@
           "slot_group": "MIxS",
           "range": "string",
           "required": false,
-          "pattern": "^\\S+.*\\S+;[-+]?[0-9]*\\.?[0-9]+([eE][-+]?[0-9]+)? \\S+;([\\+-]?\\d{4}(?!\\d{2}\\b))((-?)((0[1-9]|1[0-2])(\\3([12]\\d|0[1-9]|3[01]))?|W([0-4]\\d|5[0-2])(-?[1-7])?|(00[1-9]|0[1-9]\\d|[12]\\d{2}|3([0-5]\\d|6[1-6])))([T\\s]((([01]\\d|2[0-3])((:?)[0-5]\\d)?|24\\:?00)([\\.,]\\d+(?!:))?)?(\\17[0-5]\\d([\\.,]\\d+)?)?([zZ]|([\\+-])([01]\\d|2[0-3]):?([0-5]\\d)?)?)?)?$"
+          "pattern": "^\\S+.*\\S+;[-+]?[0-9]*\\.?[0-9]+([eE][-+]?[0-9]+)? \\S+;([\\+-]?\\d{4}(?!\\d{2}\\b))((-?)((0[1-9]|1[0-2])(\\3([12]\\d|0[1-9]|3[01]))?|W([0-4]\\d|5[0-2])(-?[1-7])?|(00[1-9]|0[1-9]\\d|[12]\\d{2}|3([0-5]\\d|6[1-6])))([T\\s]((([01]\\d|2[0-3])((:?)[0-5]\\d)?|24:?00)([\\.,]\\d+(?!:))?)?(\\17[0-5]\\d([\\.,]\\d+)?)?([zZ]|([\\+-])([01]\\d|2[0-3]):?([0-5]\\d)?)?)?)?$"
         },
         "al_sat": {
           "name": "al_sat",
@@ -100610,7 +100610,7 @@
           "slot_group": "MIxS",
           "range": "string",
           "required": false,
-          "pattern": "^\\S+.*\\S+;([\\+-]?\\d{4}(?!\\d{2}\\b))((-?)((0[1-9]|1[0-2])(\\3([12]\\d|0[1-9]|3[01]))?|W([0-4]\\d|5[0-2])(-?[1-7])?|(00[1-9]|0[1-9]\\d|[12]\\d{2}|3([0-5]\\d|6[1-6])))([T\\s]((([01]\\d|2[0-3])((:?)[0-5]\\d)?|24\\:?00)([\\.,]\\d+(?!:))?)?(\\17[0-5]\\d([\\.,]\\d+)?)?([zZ]|([\\+-])([01]\\d|2[0-3]):?([0-5]\\d)?)?)?)?$"
+          "pattern": "^\\S+.*\\S+;([\\+-]?\\d{4}(?!\\d{2}\\b))((-?)((0[1-9]|1[0-2])(\\3([12]\\d|0[1-9]|3[01]))?|W([0-4]\\d|5[0-2])(-?[1-7])?|(00[1-9]|0[1-9]\\d|[12]\\d{2}|3([0-5]\\d|6[1-6])))([T\\s]((([01]\\d|2[0-3])((:?)[0-5]\\d)?|24:?00)([\\.,]\\d+(?!:))?)?(\\17[0-5]\\d([\\.,]\\d+)?)?([zZ]|([\\+-])([01]\\d|2[0-3]):?([0-5]\\d)?)?)?)?$"
         },
         "profile_position": {
           "name": "profile_position",
@@ -101515,7 +101515,7 @@
           "range": "string",
           "required": true,
           "recommended": true,
-          "pattern": "[^\\:\\n\\r]+\\:[^\\:\\n\\r]+"
+          "pattern": "[^:\\n\\r]+:[^:\\n\\r]+"
         },
         "analysis_type": {
           "name": "analysis_type",
@@ -103320,7 +103320,7 @@
           "range": "string",
           "required": true,
           "recommended": true,
-          "pattern": "[^\\:\\n\\r]+\\:[^\\:\\n\\r]+"
+          "pattern": "[^:\\n\\r]+:[^:\\n\\r]+"
         },
         "suspend_solids": {
           "name": "suspend_solids",
@@ -106722,7 +106722,7 @@
           "range": "string",
           "required": true,
           "recommended": true,
-          "pattern": "[^\\:\\n\\r]+\\:[^\\:\\n\\r]+"
+          "pattern": "[^:\\n\\r]+:[^:\\n\\r]+"
         },
         "analysis_type": {
           "name": "analysis_type",
@@ -109858,7 +109858,7 @@
           "range": "string",
           "required": true,
           "recommended": true,
-          "pattern": "[^\\:\\n\\r]+\\:[^\\:\\n\\r]+"
+          "pattern": "[^:\\n\\r]+:[^:\\n\\r]+"
         },
         "sulfate": {
           "name": "sulfate",
@@ -115154,7 +115154,7 @@
           "range": "string",
           "required": true,
           "recommended": true,
-          "pattern": "[^\\:\\n\\r]+\\:[^\\:\\n\\r]+"
+          "pattern": "[^:\\n\\r]+:[^:\\n\\r]+"
         },
         "analysis_type": {
           "name": "analysis_type",
@@ -117479,7 +117479,7 @@
             "Activity"
           ],
           "range": "datetime",
-          "pattern": "^([\\+-]?\\d{4}(?!\\d{2}\\b))((-?)((0[1-9]|1[0-2])(\\3([12]\\d|0[1-9]|3[01]))?|W([0-4]\\d|5[0-2])(-?[1-7])?|(00[1-9]|0[1-9]\\d|[12]\\d{2}|3([0-5]\\d|6[1-6])))([T\\s]((([01]\\d|2[0-3])((:?)[0-5]\\d)?|24\\:?00)([\\.,]\\d+(?!:))?)?(\\17[0-5]\\d([\\.,]\\d+)?)?([zZ]|([\\+-])([01]\\d|2[0-3]):?([0-5]\\d)?)?)?)?$"
+          "pattern": "^([\\+-]?\\d{4}(?!\\d{2}\\b))((-?)((0[1-9]|1[0-2])(\\3([12]\\d|0[1-9]|3[01]))?|W([0-4]\\d|5[0-2])(-?[1-7])?|(00[1-9]|0[1-9]\\d|[12]\\d{2}|3([0-5]\\d|6[1-6])))([T\\s]((([01]\\d|2[0-3])((:?)[0-5]\\d)?|24:?00)([\\.,]\\d+(?!:))?)?(\\17[0-5]\\d([\\.,]\\d+)?)?([zZ]|([\\+-])([01]\\d|2[0-3]):?([0-5]\\d)?)?)?)?$"
         },
         "ended_at_time": {
           "name": "ended_at_time",
@@ -117496,7 +117496,7 @@
             "Activity"
           ],
           "range": "datetime",
-          "pattern": "^([\\+-]?\\d{4}(?!\\d{2}\\b))((-?)((0[1-9]|1[0-2])(\\3([12]\\d|0[1-9]|3[01]))?|W([0-4]\\d|5[0-2])(-?[1-7])?|(00[1-9]|0[1-9]\\d|[12]\\d{2}|3([0-5]\\d|6[1-6])))([T\\s]((([01]\\d|2[0-3])((:?)[0-5]\\d)?|24\\:?00)([\\.,]\\d+(?!:))?)?(\\17[0-5]\\d([\\.,]\\d+)?)?([zZ]|([\\+-])([01]\\d|2[0-3]):?([0-5]\\d)?)?)?)?$"
+          "pattern": "^([\\+-]?\\d{4}(?!\\d{2}\\b))((-?)((0[1-9]|1[0-2])(\\3([12]\\d|0[1-9]|3[01]))?|W([0-4]\\d|5[0-2])(-?[1-7])?|(00[1-9]|0[1-9]\\d|[12]\\d{2}|3([0-5]\\d|6[1-6])))([T\\s]((([01]\\d|2[0-3])((:?)[0-5]\\d)?|24:?00)([\\.,]\\d+(?!:))?)?(\\17[0-5]\\d([\\.,]\\d+)?)?([zZ]|([\\+-])([01]\\d|2[0-3]):?([0-5]\\d)?)?)?)?$"
         },
         "was_informed_by": {
           "name": "was_informed_by",
@@ -117626,6 +117626,156 @@
             "Agent"
           ],
           "range": "Activity"
+        }
+      }
+    },
+    "SubmissionRow": {
+      "name": "SubmissionRow",
+      "description": "represents a row of data produced by the submission portal comprised of an environmental package and mixins",
+      "from_schema": "https://example.com/nmdc_submission_schema",
+      "attributes": {
+        "air": {
+          "name": "air",
+          "from_schema": "https://example.com/nmdc_submission_schema",
+          "alias": "air",
+          "owner": "SubmissionRow",
+          "domain_of": [
+            "SubmissionRow"
+          ],
+          "range": "air",
+          "inlined": true
+        },
+        "biofilm": {
+          "name": "biofilm",
+          "from_schema": "https://example.com/nmdc_submission_schema",
+          "alias": "biofilm",
+          "owner": "SubmissionRow",
+          "domain_of": [
+            "SubmissionRow"
+          ],
+          "range": "biofilm",
+          "inlined": true
+        },
+        "bioscales": {
+          "name": "bioscales",
+          "from_schema": "https://example.com/nmdc_submission_schema",
+          "alias": "bioscales",
+          "owner": "SubmissionRow",
+          "domain_of": [
+            "SubmissionRow"
+          ],
+          "range": "bioscales",
+          "inlined": true
+        },
+        "built_env": {
+          "name": "built_env",
+          "from_schema": "https://example.com/nmdc_submission_schema",
+          "alias": "built_env",
+          "owner": "SubmissionRow",
+          "domain_of": [
+            "SubmissionRow"
+          ],
+          "range": "built_env",
+          "inlined": true
+        },
+        "host-associated": {
+          "name": "host-associated",
+          "from_schema": "https://example.com/nmdc_submission_schema",
+          "alias": "host_associated",
+          "owner": "SubmissionRow",
+          "domain_of": [
+            "SubmissionRow"
+          ],
+          "range": "host-associated",
+          "inlined": true
+        },
+        "plant-associated": {
+          "name": "plant-associated",
+          "from_schema": "https://example.com/nmdc_submission_schema",
+          "alias": "plant_associated",
+          "owner": "SubmissionRow",
+          "domain_of": [
+            "SubmissionRow"
+          ],
+          "range": "plant-associated",
+          "inlined": true
+        },
+        "sediment": {
+          "name": "sediment",
+          "from_schema": "https://example.com/nmdc_submission_schema",
+          "alias": "sediment",
+          "owner": "SubmissionRow",
+          "domain_of": [
+            "SubmissionRow"
+          ],
+          "range": "sediment",
+          "inlined": true
+        },
+        "soil": {
+          "name": "soil",
+          "from_schema": "https://example.com/nmdc_submission_schema",
+          "alias": "soil",
+          "owner": "SubmissionRow",
+          "domain_of": [
+            "SubmissionRow"
+          ],
+          "range": "soil",
+          "inlined": true
+        },
+        "wastewater_sludge": {
+          "name": "wastewater_sludge",
+          "from_schema": "https://example.com/nmdc_submission_schema",
+          "alias": "wastewater_sludge",
+          "owner": "SubmissionRow",
+          "domain_of": [
+            "SubmissionRow"
+          ],
+          "range": "wastewater_sludge",
+          "inlined": true
+        },
+        "water": {
+          "name": "water",
+          "from_schema": "https://example.com/nmdc_submission_schema",
+          "alias": "water",
+          "owner": "SubmissionRow",
+          "domain_of": [
+            "SubmissionRow"
+          ],
+          "range": "water",
+          "inlined": true
+        },
+        "emsl_mixin": {
+          "name": "emsl_mixin",
+          "from_schema": "https://example.com/nmdc_submission_schema",
+          "alias": "emsl_mixin",
+          "owner": "SubmissionRow",
+          "domain_of": [
+            "SubmissionRow"
+          ],
+          "range": "emsl_mixin",
+          "inlined": true
+        },
+        "jgi_mg_mixin": {
+          "name": "jgi_mg_mixin",
+          "from_schema": "https://example.com/nmdc_submission_schema",
+          "alias": "jgi_mg_mixin",
+          "owner": "SubmissionRow",
+          "domain_of": [
+            "SubmissionRow"
+          ],
+          "range": "jgi_mg_mixin",
+          "inlined": true
+        },
+        "jgi_mt_mixin": {
+          "name": "jgi_mt_mixin",
+          "from_schema": "https://example.com/nmdc_submission_schema",
+          "alias": "jgi_mt_mixin",
+          "owner": "SubmissionRow",
+          "domain_of": [
+            "SubmissionRow"
+          ],
+          "range": "jgi_mt_mixin",
+          "inlined": true
         }
       }
     }
