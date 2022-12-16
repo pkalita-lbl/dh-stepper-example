@@ -46128,47 +46128,73 @@ classes:
     slots:
     - acted_on_behalf_of
     - was_informed_by
-  SubmissionRow:
-    description: represents a row of data produced by the submission portal comprised
+  Submission:
+    description: represents data produced by the submission portal comprised
       of an environmental package and mixins
     attributes:
       air:
         range: air
+        multivalued: true
         inlined: true
+        inlined_as_list: true
       biofilm:
         range: biofilm
+        multivalued: true
         inlined: true
+        inlined_as_list: true
       bioscales:
         range: bioscales
+        multivalued: true
         inlined: true
+        inlined_as_list: true
       built_env:
         range: built_env 
+        multivalued: true
         inlined: true
+        inlined_as_list: true
       host-associated:
         range: host-associated
+        multivalued: true
         inlined: true
+        inlined_as_list: true
       plant-associated:
         range: plant-associated
+        multivalued: true
         inlined: true
+        inlined_as_list: true
       sediment:
         range: sediment
+        multivalued: true
         inlined: true
+        inlined_as_list: true
       soil:
         range: soil
+        multivalued: true
         inlined: true
+        inlined_as_list: true
       wastewater_sludge:
         range: wastewater_sludge
+        multivalued: true
         inlined: true
+        inlined_as_list: true
       water:
         range: water
+        multivalued: true
         inlined: true
+        inlined_as_list: true
       emsl_mixin:
         range: emsl_mixin
+        multivalued: true
         inlined: true
+        inlined_as_list: true
       jgi_mg_mixin:
         range: jgi_mg_mixin
+        multivalued: true
         inlined: true
+        inlined_as_list: true
       jgi_mt_mixin:
         range: jgi_mt_mixin
+        multivalued: true
         inlined: true
+        inlined_as_list: true
 source_file: artifacts/from_sheets2linkml.yaml

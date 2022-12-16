@@ -1,13 +1,16 @@
-import React, { useState, useRef, useMemo } from 'react'
+import React, { useState, useRef } from 'react'
 import produce from 'immer'
+import * as XLSX from 'xlsx'
+
 import DataHarmonizer from './components/DataHarmonizer'
 import Stepper from './components/Stepper'
 
 import schema from './schema.json'
 
+const EXPORT_FILENAME = 'nmdc_sample_export.xlsx'
+
 // controls which field is used to merge data from different DH views
 const SCHEMA_ID = 'source_mat_id'
-const INTERNAL_ID = '_id'
 
 // used in determining which rows are shown in each view
 const TYPE_FIELD = 'analysis_type'
@@ -42,11 +45,79 @@ const TEMPLATES = [
 ]
 const ENVIRONMENT_TEMPLATE = TEMPLATES[0]
 
+function getSlot(slotName) {
+  return schema.slots[slotName]
+}
+
+function getSlotGroupRank(slotName) {
+  const slot = getSlot(slotName)
+  if (!slot || !slot.slot_group) {
+    return 9999
+  }
+  return getSlotRank(slot.slot_group)
+}
+
+function getSlotRank(slotName) {
+  const slot = getSlot(slotName)
+  if (!slot) {
+    return 9999
+  }
+  return slot.rank
+}
+
+function getOrderedAttributes(template) {
+  return Object.keys(schema.classes[template].attributes)
+    .sort((a, b) => {
+      const aSlotGroupRank = getSlotGroupRank(a)
+      const bSlotGroupRank = getSlotGroupRank(b)
+      if (aSlotGroupRank !== bSlotGroupRank) {
+        return aSlotGroupRank - bSlotGroupRank
+      }
+      const aSlotRank = getSlotRank(a)
+      const bSlotRank = getSlotRank(b)
+      return aSlotRank - bSlotRank
+    })
+}
+
+function getHeaderRow(template) {
+  const orderedAttrNames = getOrderedAttributes(template)
+  const attrs = schema.classes[template].attributes
+  const header = {}
+  for (const attrName of orderedAttrNames) {
+    header[attrName] = attrs[attrName].title || attrs[attrName].name
+  }
+  return header
+}
+
+function flattenArrayValues(table) {
+  return produce(table, draft => {
+    for (const row of draft) {
+      for (const [key, value] of Object.entries(row)) {
+        if (Array.isArray(value)) {
+          row[key] = value.join('; ')
+        }
+      }
+    }
+  })
+}
+
+function unflattenArrayValues(table, template) {
+  return produce(table, draft => {
+    for (const row of draft) {
+      for (const [key, value] of Object.entries(row)) {
+        if (schema.classes[template].attributes[key].multivalued) {
+          row[key] = value.split(';').map(v => v.trim())
+        }
+      }
+    }
+  })
+}
+
 function rowIsVisibleForTemplate(row, template) {
   if (template === ENVIRONMENT_TEMPLATE) {
     return true
   }
-  const row_types = row[ENVIRONMENT_TEMPLATE][TYPE_FIELD]
+  const row_types = row[TYPE_FIELD]
   if (!row_types) {
     return false
   }
@@ -64,8 +135,9 @@ function rowIsVisibleForTemplate(row, template) {
 
 function App() {
   const dhRef = useRef(null)
+  const fileInputRef = useRef(null)
   const [active, setActive] = useState(0)
-  const [data, setData] = useState([])
+  const [data, setData] = useState({})
   const [invalidCells, setInvalidCells] = useState({})
 
   const activeTemplate = TEMPLATES[active]
@@ -76,11 +148,19 @@ function App() {
     // need to populate common columns for upcoming view
     const nextTemplate = TEMPLATES[nextStep]
     setData(produce(data => {
-      for (const row of data) {
-        if (row[nextTemplate] == undefined && rowIsVisibleForTemplate(row, nextTemplate)) {
-          row[nextTemplate] = {}
-          for (const col of COMMON_COLUMNS) {
-            row[nextTemplate][col] = row[ENVIRONMENT_TEMPLATE][col]
+      for (const row of data[ENVIRONMENT_TEMPLATE]) {
+        if (rowIsVisibleForTemplate(row, nextTemplate)) {
+          const rowId = row[SCHEMA_ID]
+          if (!data[nextTemplate]) {
+            data[nextTemplate] = []
+          }
+          const existing = data[nextTemplate].find(r => r[SCHEMA_ID] === rowId)
+          if (!existing) {
+            const newRow = {}
+            for (const col of COMMON_COLUMNS) {
+              newRow[col] = row[col]
+            }
+            data[nextTemplate].push(newRow)
           }
         }
       }
@@ -99,18 +179,7 @@ function App() {
       }
     }
     setData(produce(data => {
-      for (const row of current) {
-        const rowId = row[SCHEMA_ID]
-        const mergeRow = data.find(d => d[INTERNAL_ID] === rowId)
-        if (mergeRow == undefined && activeTemplate === ENVIRONMENT_TEMPLATE) {
-          data.push({
-            [INTERNAL_ID]: rowId,
-            [activeTemplate]: row
-          })
-        } else {
-          mergeRow[activeTemplate] = row
-        }
-      }
+      data[activeTemplate] = current
     }))
   }
 
@@ -153,6 +222,38 @@ function App() {
     doValidate()
   }
 
+  function handleExport() {
+    // TODO data may not be fully sync'd at this point
+    const workbook = XLSX.utils.book_new()
+    for (const template of TEMPLATES) {
+      const worksheet = XLSX.utils.json_to_sheet([
+        getHeaderRow(template),
+        ...flattenArrayValues(data[template])
+      ], {
+        skipHeader: true
+      })
+      XLSX.utils.book_append_sheet(workbook, worksheet, template)
+    }
+    XLSX.writeFile(workbook, EXPORT_FILENAME, { compression: true })
+  }
+
+  function handleImport(file) {
+    const reader = new FileReader();
+    reader.onload = function(e) {
+      const workbook = XLSX.read(e.target.result);
+      const imported = {}
+      for (const [name, worksheet] of Object.entries(workbook.Sheets)) {
+        imported[name] = unflattenArrayValues(
+          XLSX.utils.sheet_to_json(worksheet, { 
+            header: getOrderedAttributes(name),
+            range: 1
+          }), name)
+      }
+      setData(imported)
+    };
+    reader.readAsArrayBuffer(file);
+  }
+
   function doValidate() {
     dhRef.current.validate()
     setInvalidCells(prev => {
@@ -163,14 +264,6 @@ function App() {
     })
   }
 
-
-  const filteredData = useMemo(() => {
-    return data
-      .map(row => row[activeTemplate])
-      .filter(row => row !== undefined)
-  }, [data, activeTemplate])
-
-
   const idCol = dhRef.current?.getFields().findIndex(f => f.name === SCHEMA_ID)
   
   return (
@@ -178,18 +271,23 @@ function App() {
       <div className="row">
         <div className="col-7">
           <Stepper steps={TEMPLATES} active={active} onChange={handleStepChange} />
-          <button className='btn btn-warning mb-2' onClick={handleValidate}>Validate</button>
+          
+          <button className="btn btn-outline-secondary mb-2" onClick={handleAddTestData}>Test Data</button>
+          <button className='btn btn-warning mb-2 ml-2' onClick={handleValidate}>Validate</button>
           <button className='btn btn-warning mb-2 ml-2' onClick={handleSync}>Sync</button>
+          <button className='btn btn-info mb-2 ml-2' onClick={handleExport}>Export</button>
+          <input ref={fileInputRef} type="file" style={{position: 'fixed', top: -1000}} onChange={evt => handleImport(evt.target.files[0])}/>
+          <button className='btn btn-info mb-2 ml-2' onClick={() => fileInputRef.current.click()}>Import</button>
+
           <DataHarmonizer 
             schema={schema} 
             template={activeTemplate} 
             allowNewRows={activeTemplate === ENVIRONMENT_TEMPLATE}
-            data={filteredData} 
+            data={data[activeTemplate] || []} 
             invalidCells={invalidCells[activeTemplate]}
             readOnlyCols={activeTemplate === ENVIRONMENT_TEMPLATE ? [] : [idCol]}
             dhRef={dhRef} 
           />
-          <button className="btn btn-outline-secondary mt-2" onClick={handleAddTestData}>Test Data</button>
         </div>
         <div className="col-5 border-left">
           <div className='alert alert-secondary small mt-2'>

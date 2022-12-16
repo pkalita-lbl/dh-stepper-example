@@ -3,4 +3,4 @@ src/schema.json: schema.yaml
 
 jsonschema/schema.json: schema.yaml
 	mkdir -p jsonschema
-	pipx run --spec linkml gen-json-schema --top-class SubmissionRow $< > $@
+	pipx run --spec linkml gen-json-schema --top-class Submission $< > $@
