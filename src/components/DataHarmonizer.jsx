@@ -49,6 +49,7 @@ function DataHarmonizer({ schema, template, data, dhRef, invalidCells, allowNewR
 }
 
 DataHarmonizer.propTypes = {
+  allowNewRows: PropTypes.bool,
   dhRef: PropTypes.shape({
     current: PropTypes.any
   }),
